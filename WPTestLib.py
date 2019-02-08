@@ -18,7 +18,7 @@ class WPTestLib:
     host="wordpress.local"
     wpBaseUri = "%s://%s"
     siteTitle = {"class":"site-title", "text":"Anna's Dev Wordpress"}
-    siteDescription = {"class":"site-description", "text":"Just another Wordpress site"}
+    siteDescription = {"class":"site-description", "text":"Just another WordPress site"}
 
     # Strings pertaining to the main content areas.
     contentId="content"
@@ -49,35 +49,24 @@ class WPTestLib:
     # These are all strings pertaining to primary menu items.
     menuId="menu-primary"
     menuHome = {"XPath":"//*[@id='menu-primary']/li[1]/a", "text":"Home", "link":"http://wordpress.local/"}
-    menuAboutXPath="//*[@id='menu-primary']/li[2]/a"
-    menuAboutText="About"
-    menuAboutLink="http://wordpress.local/about/"
-    menuBooksXPath="//*[@id='menu-primary']/li[3]/a"
-    menuBooksText="Books"
-    menuBooksLink="http://wordpress.local/books/"
-    menuBlogXPath="//*[@id='menu-primary']/li[4]/a"
-    menuBlogText="Blog"
-    menuBlogLink="http://wordpress.local/blog/"
-    menuContactXPath="//*[@id='menu-primary']/li[5]/a"
-    menuContactText="Contact"
-    menuContactLink="http://wordpress.local/contact/"
-    menuStoreXPath="//*[@id='menu-primary']/li[6]/a"
-    menuStoreText="Store"
-    menuStoreLink="https://squareup.com/market/angela-korrati"
+    menuAbout = {"XPath":"//*[@id='menu-primary']/li[2]/a", "About":"http://wordpress.local/about/"}
+    menuBooks = {"XPath":"//*[@id='menu-primary']/li[3]/a", "text":"Books", "link":"http://wordpress.local/books/"}
+    menuBlog = {"XPath":"//*[@id='menu-primary']/li[4]/a", "text":"Blog", "link":"http://wordpress.local/blog/"}
+    menuContact = {"XPath":"//*[@id='menu-primary']/li[5]/a", "text":"Contact",
+                   "link":"http://wordpress.local/contact/"}
+    menuStore = {"XPath":"//*[@id='menu-primary']/li[6]/a", "text":"Store",
+                 "link":"https://squareup.com/market/angela-korrati"}
 
     # Secondary menu items for the Home menu
-    submenuHomeXPath="//*[@id='menu-primary']/li[1]/ul/li/a"
-    submenuHomeText="Angelahighland.com"
-    submenuHomeLink="http://www.angelahighland.com/"
+    submenuHome = {"XPath":"//*[@id='menu-primary']/li[1]/ul/li/a", "text":"Angelahighland.com",
+                   "link":"http://www.angelahighland.com/"}
 
     # Secondary menu items for the Books menu
     submenuBooksXPath="//*[@id='menu-primary']/li[3]/ul"
-    submenuFaerieXPath="//*[@id='menu-primary']/li[3]/ul/li[1]/a"
-    submenuFaerieText="Faerie Blood"
-    submenuFaerieLink="http://wordpress.local/books/faerie-blood/"
-    submenuBoneXPath="//*[@id='menu-primary']/li[3]/ul/li[2]/a"
-    submenuBoneText="Bone Walker"
-    submenuBoneLink="http://wordpress.local/books/bone-walker/"
+    submenuFaerie = {"XPath":"//*[@id='menu-primary']/li[3]/ul/li[1]/a", "text":"Faerie Blood",
+                     "link":"http://wordpress.local/books/faerie-blood/"}
+    submenuBone = {"XPath":"//*[@id='menu-primary']/li[3]/ul/li[2]/a", "text":"Bone Walker",
+                   "link":"http://wordpress.local/books/bone-walker/"}
     submenuValorXPath="//*[@id='menu-primary']/li[3]/ul/li[3]/a"
     submenuValorText="Valor of the Healer"
     submenuValorLink="http://wordpress.local/books/valor-of-the-healer/"
