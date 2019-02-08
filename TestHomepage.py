@@ -16,3 +16,10 @@ class TestHomepage(BaseTest):
         '''Verify that the homepage has the correct title.'''
         title = self.driver.find_element_by_class_name(self.wpLib.siteTitle['class'])
         assert title.text == self.wpLib.siteTitle['text']
+        assert title.is_displayed() is True
+
+    def testHomepageDescription(self):
+        '''Verify that the homepage has the correct description.'''
+        description = self.driver.find_element_by_class_name(self.wpLib.siteDescription['class'])
+        assert description.text == self.wpLib.siteDescription['text']
+        assert description.is_displayed() is True
