@@ -1,3 +1,5 @@
+import WPMenu
+
 # WPHomepage
 # Written by Angela Korra'ti
 # Last updated 2/8/2019
@@ -7,6 +9,7 @@
 class WPHomepage:
     driver = None
     wpLib = None
+    wpMenu = None
 
     def __init__(self, driver, wpLib):
         '''
@@ -17,6 +20,8 @@ class WPHomepage:
         self.driver = driver
         self.wpLib = wpLib
 
+        # Initialize the menu object
+        self.wpMenu = WPMenu.WPMenu(self.driver, self.wpLib)
 
     def siteTitleElement(self):
         '''
