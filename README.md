@@ -15,6 +15,8 @@ Overall, I'm setting up this suite in Python similarly to how I wrote similar te
 ## Skills and tech I'm demonstrating here
 * Use of a helper class to set test-specific strings like ID numbers, titles, and names
 * Using Nose functionality to run the test suite, and to annotate test methods
+* Use of the @property decorator for a method
+* Use of support classes to dictate page layout so I can shorten actual test cases
 * Testing against a site running as a Docker container
 
 ## Why Nose?
