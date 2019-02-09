@@ -46,7 +46,7 @@ class WPTestLib:
     # These are all strings pertaining to primary menu items.
     menuId="menu-primary"
     menuHome = {"XPath":"//*[@id='menu-primary']/li[1]/a", "text":"Home", "link":"http://wordpress.local/"}
-    menuAbout = {"XPath":"//*[@id='menu-primary']/li[2]/a", "About":"http://wordpress.local/about/"}
+    menuAbout = {"XPath":"//*[@id='menu-primary']/li[2]/a", "text":"About", "link":"http://wordpress.local/about/"}
     menuBooks = {"XPath":"//*[@id='menu-primary']/li[3]/a", "text":"Books", "link":"http://wordpress.local/books/"}
     menuBlog = {"XPath":"//*[@id='menu-primary']/li[4]/a", "text":"Blog", "link":"http://wordpress.local/blog/"}
     menuContact = {"XPath":"//*[@id='menu-primary']/li[5]/a", "text":"Contact",
