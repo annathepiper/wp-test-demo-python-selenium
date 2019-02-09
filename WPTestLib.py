@@ -1,6 +1,6 @@
 # WPTestLib
 # Written by Angela Korra'ti
-# Last updated 2/7/2019
+# Last updated 2/8/2019
 #
 # This is a helper class to contain various test strings, ids, classes, and xpaths.
 
@@ -30,15 +30,12 @@ class WPTestLib:
     footerSocialMenuId="menu-social-1"
     footerSiteInfoClass="site-info"
     footerSiteTitleXPath="//span[@class='site-title']/a"
-    footerWPLinkXPath="//div[@class='site-info']/a"
-    footerWPLink="https://wordpress.org/"
-    footerWPLinkText="Proudly powered by Wordpress"
-    footerSocialFacebookXPath="//ul[@id='menu-social-1']/li[1]/a"
-    footerSocialFacebookLink="https://www.facebook.com/annathepiper"
-    footerSocialFacebookText="Facebook"
-    footerSocialTwitterXPath="//ul[@id='menu-social-1']/li[2]/a"
-    footerSocialTwitterLink="https://twitter.com/annathepiper"
-    footerSocialTwitterText="Twitter"
+    footerWPLink = {"XPath":"//div[@class='site-info']/a", "text":"Proudly powered by Wordpress",
+                    "link":"https://wordpress.org/"}
+    footerSocialFacebook = {"XPath":"//ul[@id='menu-social-1']/li[1]/a", "text":"Facebook",
+                            "link":"https://www.facebook.com/annathepiper"}
+    footerSocialTwitter = {"XPath":"//ul[@id='menu-social-1']/li[2]/a", "text":"Twitter",
+                           "link":"https://twitter.com/annathepiper"}
     footerSocialGithubXPath="//ul[@id='menu-social-1']/li[3]/a"
     footerSocialGithubLink="https://github.com/annathepiper"
     footerSocialGithubText="GitHub"
