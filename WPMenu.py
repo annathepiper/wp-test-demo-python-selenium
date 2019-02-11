@@ -1,84 +1,110 @@
 # WPMenu
 # Written by Angela Korra'ti
-# Last updated 2/8/2019
+# Last updated 2/11/2019
 #
 # This is a helper class to define the layout of the main menu. Used in turn by page level classes.
 
+
 class WPMenu:
     driver = None
-    wpLib = None
+    wp_lib = None
 
-    def __init__(self, driver, wpLib):
-        '''
+    def __init__(self, driver, wp_lib):
+        """
         Init method for the class
         :param driver: Webdriver object to use
-        :param wpLib: Instance of WPTestLib support class for ids, classes, xpaths, etc.
-        '''
+        :param wp_lib: Instance of WPTestLib support class for ids, classes, xpaths, etc.
+        """
         self.driver = driver
-        self.wpLib = wpLib
+        self.wp_lib = wp_lib
 
-    def menuElement(self):
-        '''
+    @property
+    def menu_element(self):
+        """
         :return: The Webdriver element pointing at the main menu
-        '''
-        return self.driver.find_element_by_id(self.wpLib.menuId)
+        """
+        return self.driver.find_element_by_id(self.wp_lib.menu_id)
 
-    def homeMenuElement(self):
-        '''
+    @property
+    def home_menu_element(self):
+        """
         :return: The Webdriver element pointing at the Home menu item
-        '''
-        return self.driver.find_element_by_xpath(self.wpLib.menuHome['XPath'])
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.menu_home['XPath'])
 
     @property
-    def homeMenuText(self):
-        '''
+    def home_menu_text(self):
+        """
         :return: The text of the Home menu item
-        '''
-        return self.homeMenuElement().text
+        """
+        return self.home_menu_element.text
 
     @property
-    def homeMenuLink(self):
-        '''
+    def home_menu_link(self):
+        """
         :return: The Home menu item link
-        '''
-        return self.homeMenuElement().get_attribute('href')
+        """
+        return self.home_menu_element.get_attribute('href')
 
-    def aboutMenuElement(self):
-        '''
+    @property
+    def about_menu_element(self):
+        """
         :return: The Webdriver element pointing at the About menu item
-        '''
-        return self.driver.find_element_by_xpath(self.wpLib.menuAbout['XPath'])
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.menu_about['XPath'])
 
     @property
-    def aboutMenuText(self):
-        '''
+    def about_menu_text(self):
+        """
         :return: The text of the About menu item
-        '''
-        return self.aboutMenuElement().text
+        """
+        return self.about_menu_element.text
 
     @property
-    def aboutMenuLink(self):
-        '''
+    def about_menu_link(self):
+        """
         :return: The About menu item link
-        '''
-        return self.aboutMenuElement().get_attribute('href')
+        """
+        return self.about_menu_element.get_attribute('href')
 
-    def booksMenuElement(self):
-        '''
+    @property
+    def books_menu_element(self):
+        """
         :return: The Webdriver element pointing at the Books menu item
-        '''
-        return self.driver.find_element_by_xpath(self.wpLib.menuBooks['XPath'])
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.menu_books['XPath'])
 
     @property
-    def booksMenuText(self):
-        '''
+    def books_menu_text(self):
+        """
         :return: The text of the Books menu item
-        '''
-        return self.booksMenuElement().text
+        """
+        return self.books_menu_element.text
 
     @property
-    def booksMenuLink(self):
-        '''
+    def books_menu_link(self):
+        """
         :return: The Books menu item link
-        '''
-        return self.booksMenuElement().get_attribute('href')
+        """
+        return self.books_menu_element.get_attribute('href')
+
+    @property
+    def blog_menu_element(self):
+        """
+        :return: The Webdriver element pointing at the Blog menu item
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.menu_blog['XPath'])
+
+    @property
+    def blog_menu_text(self):
+        """
+        :return: The text of the Blog menu item
+        """
+        return self.blog_menu_element.text
+
+    @property
+    def blog_menu_link(self):
+        """
+        :return: The Blog menu item link
+        """
+        return self.blog_menu_element.get_attribute('href')
