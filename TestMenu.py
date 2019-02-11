@@ -136,3 +136,30 @@ class TestMenu(BaseTest):
         """
         self.wp_menu.blog_menu_element.click()
         assert self.driver.current_url == self.wp_menu.blog_menu_link
+
+    def TestContactMenuExistsVisible(self):
+        """
+        Verify that the Contact menu is present and visible
+        """
+        contact_menu_element = self.wp_menu.contact_menu_element
+        assert contact_menu_element is not None
+        assert contact_menu_element.is_displayed()
+
+    def TestContactMenuText(self):
+        """
+        Verify the Contact menu text is correct
+        """
+        assert self.wp_menu.contact_menu_text == self.wp_lib.menu_contact['text']
+
+    def TestContactMenuLink(self):
+        """
+        Verify the Contact menu link is correct
+        """
+        assert self.wp_menu.contact_menu_link == self.wp_lib.menu_contact['link']
+
+    def TestContactMenuLinkClick(self):
+        """
+        Verify clicking the Contact menu link lands you on the Contact page
+        """
+        self.wp_menu.contact_menu_element.click()
+        assert self.driver.current_url == self.wp_menu.contact_menu_link
