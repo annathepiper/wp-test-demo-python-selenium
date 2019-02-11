@@ -47,6 +47,27 @@ class WPMenu:
         return self.home_menu_element.get_attribute('href')
 
     @property
+    def home_submenu_element(self):
+        """
+        :return: The Webdriver element pointing at the submenu under HOme
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_home['XPath'])
+
+    @property
+    def home_submenu_text(self):
+        """
+        :return: The text of the Home submenu item
+        """
+        return self.home_submenu_element.text
+
+    @property
+    def home_submenu_link(self):
+        """
+        :return: The Home submenu item link
+        """
+        return self.home_submenu_element.get_attribute('href')
+
+    @property
     def about_menu_element(self):
         """
         :return: The Webdriver element pointing at the About menu item
