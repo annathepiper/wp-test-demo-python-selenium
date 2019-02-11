@@ -163,3 +163,31 @@ class TestMenu(BaseTest):
         """
         self.wp_menu.contact_menu_element.click()
         assert self.driver.current_url == self.wp_menu.contact_menu_link
+
+    def TestStoreMenuExistsVisible(self):
+        """
+        Verify that the Store menu is present and visible
+        """
+        store_menu_element = self.wp_menu.store_menu_element
+        assert store_menu_element is not None
+        assert store_menu_element.is_displayed()
+
+    def TestStoreMenuText(self):
+        """
+        Verify the Store menu text is correct
+        """
+        assert self.wp_menu.store_menu_text == self.wp_lib.menu_store['text']
+
+    def TestStoreMenuLink(self):
+        """
+        Verify the Store menu link is correct
+        """
+        assert self.wp_menu.store_menu_link == self.wp_lib.menu_store['link']
+
+    def TestStoreMenuLinkClick(self):
+        """
+        Verify clicking the Store menu link lands you on the Store page
+        """
+        store_menu_link = self.wp_menu.store_menu_link
+        self.wp_menu.store_menu_element.click()
+        assert self.driver.current_url == store_menu_link
