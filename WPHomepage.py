@@ -22,7 +22,7 @@ class WPHomepage:
         self.wp_lib = wp_lib
 
         # Initialize the menu object
-        self.wpMenu = WPMenu.WPMenu(self.driver, self.wp_lib)
+        self.wp_menu = WPMenu.WPMenu(self.driver, self.wp_lib)
 
     @property
     def site_title_element(self):
