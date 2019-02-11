@@ -2,93 +2,103 @@ import WPMenu
 
 # WPHomepage
 # Written by Angela Korra'ti
-# Last updated 2/8/2019
+# Last updated 2/11/2019
 #
 # This is a helper class to define the layout of the homepage of the test site.
 
+
 class WPHomepage:
     driver = None
-    wpLib = None
-    wpMenu = None
+    wp_lib = None
+    wp_menu = None
 
-    def __init__(self, driver, wpLib):
-        '''
+    def __init__(self, driver, wp_lib):
+        """
         Init method.
         :param driver: Webdriver object
-        :param wpLib: wpLib object for the helper class to get ids, classes, xpaths
-        '''
+        :param wp_lib: wp_lib object for the helper class to get ids, classes, xpaths
+        """
         self.driver = driver
-        self.wpLib = wpLib
+        self.wp_lib = wp_lib
 
         # Initialize the menu object
-        self.wpMenu = WPMenu.WPMenu(self.driver, self.wpLib)
+        self.wpMenu = WPMenu.WPMenu(self.driver, self.wp_lib)
 
-    def siteTitleElement(self):
-        '''
+    @property
+    def site_title_element(self):
+        """
         :return: The Webdriver element that refers to the site title.
-        '''
-        return self.driver.find_element_by_class_name(self.wpLib.siteTitle['class'])
+        """
+        return self.driver.find_element_by_class_name(self.wp_lib.site_title['class'])
 
     @property
-    def siteTitle(self):
-        '''
+    def site_title(self):
+        """
         :return: The text of the site title.
-        '''
-        siteTitleElement = self.driver.find_element_by_class_name(self.wpLib.siteTitle['class'])
-        return siteTitleElement.text
-
-    def siteDescriptionElement(self):
-        '''
-        :return: The Webdriver element that refers to the site description.
-        '''
-        return self.driver.find_element_by_class_name(self.wpLib.siteDescription['class'])
+        """
+        site_title_element = self.driver.find_element_by_class_name(self.wp_lib.site_title['class'])
+        return site_title_element.text
 
     @property
-    def siteDescription(self):
-        '''
+    def site_description_element(self):
+        """
+        :return: The Webdriver element that refers to the site description.
+        """
+        return self.driver.find_element_by_class_name(self.wp_lib.site_description['class'])
+
+    @property
+    def site_description(self):
+        """
         :return: The text of the site description.
-        '''
-        siteDescriptionElement = self.driver.find_element_by_class_name(self.wpLib.siteDescription['class'])
-        return siteDescriptionElement.text
+        """
+        site_description_element = self.driver.find_element_by_class_name(self.wp_lib.site_description['class'])
+        return site_description_element.text
 
-    def primaryMenuElement(self):
-        '''
+    @property
+    def primary_menu_element(self):
+        """
         :return: The Webdriver element that refers to the primary menu.
-        '''
-        return self.driver.find_element_by_id(self.wpLib.menuId)
+        """
+        return self.driver.find_element_by_id(self.wp_lib.menu_id)
 
-    def contentAreaElement(self):
-        '''
+    @property
+    def content_area_element(self):
+        """
         :return: The Webdriver element that refers to the overall content area.
-        '''
-        return self.driver.find_element_by_id(self.wpLib.contentId)
+        """
+        return self.driver.find_element_by_id(self.wp_lib.content_id)
 
-    def primaryContentAreaElement(self):
-        '''
+    @property
+    def primary_content_area_element(self):
+        """
         :return: The Webdriver element that refers to the primary content area.
-        '''
-        return self.driver.find_element_by_id(self.wpLib.primaryContentId)
+        """
+        return self.driver.find_element_by_id(self.wp_lib.primary_content_id)
 
-    def secondaryContentAreaElement(self):
-        '''
+    @property
+    def secondary_content_area_element(self):
+        """
         :return: The Webdriver element that refers to the secondary content area.
-        '''
-        return self.driver.find_element_by_id(self.wpLib.secondaryContentId)
+        """
+        return self.driver.find_element_by_id(self.wp_lib.secondary_content_id)
 
-    def footerElement(self):
-        '''
+    @property
+    def footer_element(self):
+        """
         :return: The Webdriver element that refers to the footer.
-        '''
-        return self.driver.find_element_by_id(self.wpLib.footerId)
+        """
+        return self.driver.find_element_by_id(self.wp_lib.footer_id)
 
-    def footerSocialMenuElement(self):
-        '''
+    @property
+    def footer_social_menu_element(self):
+        """
         :return: The Webdriver element that refers to the footer social menu.
-        '''
-        return self.driver.find_element_by_id(self.wpLib.footerSocialMenuId)
+        """
+        return self.driver.find_element_by_id(self.wp_lib.footer_social_menu_id)
 
-    def footerSiteInfoElement(self):
-        '''
+    @property
+    def footer_site_info_element(self):
+        """
         :return: The Webdriver element that refers to the footer site info section.
-        '''
-        return self.driver.find_element_by_class_name(self.wpLib.footerSiteInfoClass)
+        """
+        return self.driver.find_element_by_class_name(self.wp_lib.footer_site_info_class)
