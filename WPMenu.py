@@ -108,3 +108,24 @@ class WPMenu:
         :return: The Blog menu item link
         """
         return self.blog_menu_element.get_attribute('href')
+
+    @property
+    def contact_menu_element(self):
+        """
+        :return: The Webdriver element pointing at the Contact menu item
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.menu_contact['XPath'])
+
+    @property
+    def contact_menu_text(self):
+        """
+        :return: The text of the Contact menu item
+        """
+        return self.contact_menu_element.text
+
+    @property
+    def contact_menu_link(self):
+        """
+        :return: The Contact menu item link
+        """
+        return self.contact_menu_element.get_attribute('href')
