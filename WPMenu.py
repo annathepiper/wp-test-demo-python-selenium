@@ -49,7 +49,7 @@ class WPMenu:
     @property
     def home_submenu_element(self):
         """
-        :return: The Webdriver element pointing at the submenu under HOme
+        :return: The Webdriver element pointing at the submenu under Home
         """
         return self.driver.find_element_by_xpath(self.wp_lib.submenu_home['XPath'])
 
@@ -108,6 +108,139 @@ class WPMenu:
         :return: The Books menu item link
         """
         return self.books_menu_element.get_attribute('href')
+
+    @property
+    def books_submenu_element(self):
+        """
+        :return: The Webdriver element pointing at the submenu under Books
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_books_xpath)
+
+    @property
+    def faerie_submenu_element(self):
+        """
+        :return: The Webdriver element pointing to the Faerie Blood item under Books
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_faerie['XPath'])
+
+    @property
+    def faerie_submenu_text(self):
+        """
+        :return: The text of the Faerie Blood submenu item
+        """
+        return self.faerie_submenu_element.text
+
+    @property
+    def faerie_submenu_link(self):
+        """
+        :return: The link of the Faerie Blood submenu item
+        """
+        return self.faerie_submenu_element.get_attribute('href')
+
+    @property
+    def bone_submenu_element(self):
+        """
+        :return: The Webdriver element pointing to the Bone Walker item under Books
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_bone['XPath'])
+
+    @property
+    def bone_submenu_text(self):
+        """
+        :return: The text of the Bone Walker submenu item
+        """
+        return self.bone_submenu_element.text
+
+    @property
+    def bone_submenu_link(self):
+        """
+        :return: The link of the Bone Walker submenu item
+        """
+        return self.bone_submenu_element.get_attribute('href')
+
+    @property
+    def valor_submenu_element(self):
+        """
+        :return: The Webdriver element pointing to the Valor of the Healer item under Books
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_valor['XPath'])
+
+    @property
+    def valor_submenu_text(self):
+        """
+        :return: The text of the Valor of the Healer submenu item
+        """
+        return self.valor_submenu_element.text
+
+    @property
+    def valor_submenu_link(self):
+        """
+        :return: The link of the Valor of the Healer submenu item
+        """
+        return self.valor_submenu_element.get_attribute('href')
+
+    @property
+    def vengeance_submenu_element(self):
+        """
+        :return: The Webdriver element pointing to the Vengeance of the Hunter item under Books
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_vengeance['XPath'])
+
+    @property
+    def vengeance_submenu_text(self):
+        """
+        :return: The text of the Vengeance of the Hunter submenu item
+        """
+        return self.vengeance_submenu_element.text
+
+    @property
+    def vengeance_submenu_link(self):
+        """
+        :return: The link of the Vengeance of the Hunter submenu item
+        """
+        return self.vengeance_submenu_element.get_attribute('href')
+
+    @property
+    def victory_submenu_element(self):
+        """
+        :return: The Webdriver element pointing to the Victory of the Hawk item under Books
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_victory['XPath'])
+
+    @property
+    def victory_submenu_text(self):
+        """
+        :return: The text of the Victory of the Hawk submenu item
+        """
+        return self.victory_submenu_element.text
+
+    @property
+    def victory_submenu_link(self):
+        """
+        :return: The link of the Victory of the Hawk submenu item
+        """
+        return self.victory_submenu_element.get_attribute('href')
+
+    @property
+    def short_submenu_element(self):
+        """
+        :return: The Webdriver element pointing to the Short Stories item under Books
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_short['XPath'])
+
+    @property
+    def short_submenu_text(self):
+        """
+        :return: The text of the Short Stories submenu item
+        """
+        return self.short_submenu_element.text
+
+    @property
+    def short_submenu_link(self):
+        """
+        :return: The link of the Short Stories submenu item
+        """
+        return self.short_submenu_element.get_attribute('href')
 
     @property
     def blog_menu_element(self):
@@ -171,3 +304,24 @@ class WPMenu:
         :return: The Store menu item link
         """
         return self.store_menu_element.get_attribute('href')
+
+    @property
+    def store_submenu_element(self):
+        """
+        :return: The Webdriver element pointing at the submenu under Store
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.submenu_store['XPath'])
+
+    @property
+    def store_submenu_text(self):
+        """
+        :return: The text of the Store submenu item
+        """
+        return self.store_submenu_element.text
+
+    @property
+    def store_submenu_link(self):
+        """
+        :return: The Store submenu item link
+        """
+        return self.store_submenu_element.get_attribute('href')
