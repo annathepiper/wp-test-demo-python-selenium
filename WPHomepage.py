@@ -1,8 +1,9 @@
 import WPMenu
+import WPFooter
 
 # WPHomepage
 # Written by Angela Korra'ti
-# Last updated 2/11/2019
+# Last updated 2/14/2019
 #
 # This is a helper class to define the layout of the homepage of the test site.
 
@@ -11,6 +12,7 @@ class WPHomepage:
     driver = None
     wp_lib = None
     wp_menu = None
+    wp_footer = None
 
     def __init__(self, driver, wp_lib):
         """
@@ -23,6 +25,9 @@ class WPHomepage:
 
         # Initialize the menu object
         self.wp_menu = WPMenu.WPMenu(self.driver, self.wp_lib)
+
+        # Initialize the footer object
+        self.wp_footer = WPFooter.WPFooter(self.driver, self.wp_lib)
 
     @property
     def site_title_element(self):
@@ -81,24 +86,3 @@ class WPHomepage:
         :return: The Webdriver element that refers to the secondary content area.
         """
         return self.driver.find_element_by_id(self.wp_lib.secondary_content_id)
-
-    @property
-    def footer_element(self):
-        """
-        :return: The Webdriver element that refers to the footer.
-        """
-        return self.driver.find_element_by_id(self.wp_lib.footer_id)
-
-    @property
-    def footer_social_menu_element(self):
-        """
-        :return: The Webdriver element that refers to the footer social menu.
-        """
-        return self.driver.find_element_by_id(self.wp_lib.footer_social_menu_id)
-
-    @property
-    def footer_site_info_element(self):
-        """
-        :return: The Webdriver element that refers to the footer site info section.
-        """
-        return self.driver.find_element_by_class_name(self.wp_lib.footer_site_info_class)
