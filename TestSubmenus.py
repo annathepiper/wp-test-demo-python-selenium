@@ -4,13 +4,12 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 # TestSubmenus
 # Written by Angela Korra'ti
-# Last updated 2/11/2019
+# Last updated 2/14/2019
 #
 # This class conducts tests against the menu dropdowns on the main menu of my test Wordpress site.
 
 
 class TestSubmenus(BaseTest):
-    wp_homepage = None
     wp_menu = None
     ac = None
 
@@ -20,8 +19,7 @@ class TestSubmenus(BaseTest):
         """
         super().setUp()
         self.driver.get(self.wp_lib.wp_base_uri)
-        self.wp_homepage = WPHomepage.WPHomepage(self.driver, self.wp_lib)
-        self.wp_menu = self.wp_homepage.wp_menu
+        self.wp_menu = WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_menu
         self.ac = ActionChains(self.driver)
 
     def TestHomeSubmenuNotVisible(self):
