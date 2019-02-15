@@ -3,13 +3,12 @@ import WPHomepage
 
 # TestMenu
 # Written by Angela Korra'ti
-# Last updated 2/11/2019
+# Last updated 2/14/2019
 #
 # This class conducts tests against the main menu of my test Wordpress site.
 
 
 class TestMenu(BaseTest):
-    wp_homepage = None
     wp_menu = None
 
     def setUp(self):
@@ -18,8 +17,7 @@ class TestMenu(BaseTest):
         """
         super().setUp()
         self.driver.get(self.wp_lib.wp_base_uri)
-        self.wp_homepage = WPHomepage.WPHomepage(self.driver, self.wp_lib)
-        self.wp_menu = self.wp_homepage.wp_menu
+        self.wp_menu = WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_menu
 
     def TestMenuExistsVisible(self):
         """
