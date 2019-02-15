@@ -3,7 +3,7 @@ import WPHomepage
 
 # TestHomepage
 # Written by Angela Korra'ti
-# Last updated 2/11/2019
+# Last updated 2/14/2019
 #
 # This class conducts tests against the homepage of my test Wordpress site.
 
@@ -69,7 +69,7 @@ class TestHomepage(BaseTest):
         """
         Verify that the footer is present and visible on the homepage
         """
-        footer = self.wp_homepage.footer_element
+        footer = self.wp_homepage.wp_footer.footer_element
         assert footer is not None
         assert footer.is_displayed()
 
@@ -77,7 +77,7 @@ class TestHomepage(BaseTest):
         """
         Verify that the footer social menu is present and visible on the homepage
         """
-        footer_social_menu = self.wp_homepage.footer_social_menu_element
+        footer_social_menu = self.wp_homepage.wp_footer.footer_social_menu_element
         assert footer_social_menu is not None
         assert footer_social_menu.is_displayed()
 
@@ -85,6 +85,6 @@ class TestHomepage(BaseTest):
         """
         Verify that the footer site info section is present and visible on the homepage
         """
-        footer_site_info = self.wp_homepage.footer_site_info_element
+        footer_site_info = self.wp_homepage.wp_footer.footer_site_info_element
         assert footer_site_info is not None
         assert footer_site_info.is_displayed()
