@@ -31,7 +31,7 @@ class WPTestLib:
     footer_social_menu_id = "menu-social-1"
     footer_site_info_class = "site-info"
     footer_site_title_xpath = "//span[@class='site-title']/a"
-    footer_wp_link = {"XPath": "//div[@class='site-info']/a", "text": "Proudly powered by Wordpress",
+    footer_wp_link = {"XPath": "//div[@class='site-info']/a", "text": "Proudly powered by WordPress",
                       "link": "https://wordpress.org/"}
     footer_social_facebook = {"XPath": "//ul[@id='menu-social-1']/li[1]/a", "text": "Facebook",
                               "link": "https://www.facebook.com/annathepiper"}
