@@ -1,6 +1,6 @@
 # WPTestLib
 # Written by Angela Korra'ti
-# Last updated 2/11/2019
+# Last updated 2/21/2019
 #
 # This is a helper class to contain various test strings, ids, classes, and xpaths.
 
@@ -76,3 +76,55 @@ class WPTestLib:
     submenu_store = {"XPath": "//*[@id='menu-primary']/li[6]/ul/li/a",
                     "text": "Bone Walker: The Free Court of Seattle Soundtrack",
                     "link": "http://wordpress.local/bone-walker-the-free-court-of-seattle-soundtrack/"}
+
+    # Strings pertaining to the sidebar
+    sidebar_search_id = "search-2"
+    sidebar_search_input_xpath = "//*[@id='search-2']/form/label/input"
+    sidebar_search_input_text = "Search \u2026"
+    sidebar_search_button_xpath = "//*[@id='search-2']/form/button"
+    sidebar_recent_posts_id = "recent-posts-2"
+    sidebar_recent_posts_title_xpath = "//*[@id='recent-posts-2']/h2"
+    sidebar_recent_posts_title_text = "RECENT POSTS"
+    sidebar_recent_posts_list_xpath = "//*[@id='recent-posts-2']/ul"
+    sidebar_recent_comments_id = "recent-comments-2"
+    sidebar_recent_comments_title_xpath = "//*[@id='recent-comments-2']/h2"
+    sidebar_recent_comments_title_text = "RECENT COMMENTS"
+    sidebar_recent_comments_list_xpath = "//*[@id='recent-comments-2']/ul"
+    sidebarArchivesId = "archives-2"
+    sidebarArchivesTitleXPath = "//*[@id='archives-2']/h2"
+    sidebarArchivesTitleText = "ARCHIVES"
+    sidebarArchivesListXPath = "//*[@id='archives-2']/ul"
+    sidebarCategoriesId = "categories-2"
+    sidebarCategoriesTitleXPath = "//*[@id='categories-2']/h2"
+    sidebarCategoriesTitleText = "CATEGORIES"
+    sidebarCategoriesListXPath = "//*[@id='categories-2']/ul"
+    sidebarMetaId = "meta-2"
+    sidebarMetaTitleXPath = "//*[@id='meta-2']/h2"
+    sidebarMetaTitleText = "META"
+    sidebarMetaListXPath = "//*[@id='meta-2']/ul"
+
+    # Strings pertaining to search
+    searchString = "Faerie Blood"
+    searchUri = "/?s=Faerie+Blood"
+    searchResultsString = "Search Results for: "
+
+    # Strings pertaining to testing clicking on Recent Posts
+    recentPostsUri = "/2017/04/17/angelahighland-info-domain-now-active/"
+    recentPostsTitle = "angelahighland.info domain now active"
+
+    # Strings pertaining to testing clicking on Recent Comments
+    recentCommentsUri = "/2016/09/12/hello-readers/#comment-2"
+    recentCommentsTitle = "Hello, readers!"
+
+    # Strings pertaining to testing clicking on Archives
+    archivesUri = "/2017/04/"
+    archivesString = "Month: "
+    archivesTitle = "April 2017"
+
+    # Strings pertaining to testing clicking on Categories
+    categoriesUri = "/category/about-me/"
+    categoriesString = "Category: "
+    categoriesTitle = "About Me"
+
+    # Strings pertaining to testing clicking on Meta links
+    metaLoginUri = "/wp-login.php"
