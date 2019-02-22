@@ -1,9 +1,10 @@
 import WPMenu
+import WPSidebar
 import WPFooter
 
 # WPHomepage
 # Written by Angela Korra'ti
-# Last updated 2/14/2019
+# Last updated 2/21/2019
 #
 # This is a helper class to define the layout of the homepage of the test site.
 
@@ -12,6 +13,7 @@ class WPHomepage:
     driver = None
     wp_lib = None
     wp_menu = None
+    wp_sidebar = None
     wp_footer = None
 
     def __init__(self, driver, wp_lib):
@@ -25,6 +27,9 @@ class WPHomepage:
 
         # Initialize the menu object
         self.wp_menu = WPMenu.WPMenu(self.driver, self.wp_lib)
+
+        # Initialize the sidebar object
+        self.wp_sidebar = WPSidebar.WPSidebar(self.driver, self.wp_lib)
 
         # Initialize the footer object
         self.wp_footer = WPFooter.WPFooter(self.driver, self.wp_lib)
