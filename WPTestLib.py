@@ -20,6 +20,8 @@ class WPTestLib:
     wp_base_uri = "%s://%s"
     site_title = {"class": "site-title", "text": "Anna's Dev Wordpress"}
     site_description = {"class": "site-description", "text": "Just another WordPress site"}
+    page_title_class = "page-title"
+    entry_title_class = "entry-title"
 
     # Strings pertaining to the main content areas.
     content_id = "content"
