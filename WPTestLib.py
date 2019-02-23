@@ -1,6 +1,6 @@
 # WPTestLib
 # Written by Angela Korra'ti
-# Last updated 2/21/2019
+# Last updated 2/22/2019
 #
 # This is a helper class to contain various test strings, ids, classes, and xpaths.
 
@@ -90,41 +90,44 @@ class WPTestLib:
     sidebar_recent_comments_title_xpath = "//*[@id='recent-comments-2']/h2"
     sidebar_recent_comments_title_text = "RECENT COMMENTS"
     sidebar_recent_comments_list_xpath = "//*[@id='recent-comments-2']/ul"
-    sidebarArchivesId = "archives-2"
-    sidebarArchivesTitleXPath = "//*[@id='archives-2']/h2"
-    sidebarArchivesTitleText = "ARCHIVES"
-    sidebarArchivesListXPath = "//*[@id='archives-2']/ul"
-    sidebarCategoriesId = "categories-2"
-    sidebarCategoriesTitleXPath = "//*[@id='categories-2']/h2"
-    sidebarCategoriesTitleText = "CATEGORIES"
-    sidebarCategoriesListXPath = "//*[@id='categories-2']/ul"
-    sidebarMetaId = "meta-2"
-    sidebarMetaTitleXPath = "//*[@id='meta-2']/h2"
-    sidebarMetaTitleText = "META"
-    sidebarMetaListXPath = "//*[@id='meta-2']/ul"
+    sidebar_archives_id = "archives-2"
+    sidebar_archives_title_xpath = "//*[@id='archives-2']/h2"
+    sidebar_archives_title_text = "ARCHIVES"
+    sidebar_archives_list_xpath = "//*[@id='archives-2']/ul"
+    sidebar_categories_id = "categories-2"
+    sidebar_categories_title_xpath = "//*[@id='categories-2']/h2"
+    sidebar_categories_title_text = "CATEGORIES"
+    sidebar_categories_list_xpath = "//*[@id='categories-2']/ul"
+    sidebar_meta_id = "meta-2"
+    sidebar_meta_title_xpath = "//*[@id='meta-2']/h2"
+    sidebar_meta_title_text = "META"
+    sidebar_meta_list_xpath = "//*[@id='meta-2']/ul"
 
     # Strings pertaining to search
-    searchString = "Faerie Blood"
-    searchUri = "/?s=Faerie+Blood"
-    searchResultsString = "Search Results for: "
+    search_string = "Faerie Blood"
+    search_uri = "/?s=Faerie+Blood"
+    search_results_string = "Search Results for: "
+    search_no_results_string = "Walk the Wards"
+    search_no_results_uri = "/?s=Walk+the+Wards"
+    search_no_results_message = "Nothing Found"
 
     # Strings pertaining to testing clicking on Recent Posts
-    recentPostsUri = "/2017/04/17/angelahighland-info-domain-now-active/"
-    recentPostsTitle = "angelahighland.info domain now active"
+    recent_posts_uri = "/2017/04/17/angelahighland-info-domain-now-active/"
+    recent_posts_title = "angelahighland.info domain now active"
 
     # Strings pertaining to testing clicking on Recent Comments
-    recentCommentsUri = "/2016/09/12/hello-readers/#comment-2"
-    recentCommentsTitle = "Hello, readers!"
+    recent_comments_uri = "/2016/09/12/hello-readers/#comment-2"
+    recent_comments_title = "Hello, readers!"
 
     # Strings pertaining to testing clicking on Archives
-    archivesUri = "/2017/04/"
-    archivesString = "Month: "
-    archivesTitle = "April 2017"
+    archives_uri = "/2017/04/"
+    archives_string = "Month: "
+    archives_title = "April 2017"
 
     # Strings pertaining to testing clicking on Categories
-    categoriesUri = "/category/about-me/"
-    categoriesString = "Category: "
-    categoriesTitle = "About Me"
+    categories_uri = "/category/about-me/"
+    categories_string = "Category: "
+    categories_title = "About Me"
 
     # Strings pertaining to testing clicking on Meta links
-    metaLoginUri = "/wp-login.php"
+    meta_login_uri = "/wp-login.php"
