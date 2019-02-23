@@ -1,6 +1,6 @@
 # WPSidebar
 # Written by Angela Korra'ti
-# Last updated 2/21/2019
+# Last updated 2/22/2019
 #
 # This is a helper class to define the layout of the sidebar. Used in turn by page level classes.
 
@@ -54,6 +54,13 @@ class WPSidebar:
         return self.driver.find_element_by_xpath(self.wp_lib.sidebar_recent_posts_title_xpath)
 
     @property
+    def sidebar_recent_posts_title_text(self):
+        """
+        :return: Text from the recent posts title element
+        """
+        return self.sidebar_recent_posts_title_element.text
+
+    @property
     def sidebar_recent_posts_list_element(self):
         """
         :return: Webdriver element pointing at the list of recent posts
@@ -82,6 +89,13 @@ class WPSidebar:
         return self.driver.find_element_by_xpath(self.wp_lib.sidebar_recent_comments_title_xpath)
 
     @property
+    def sidebar_recent_comments_title_text(self):
+        """
+        :return: Text from the recent comments title element
+        """
+        return self.sidebar_recent_comments_title_element.text
+
+    @property
     def sidebar_recent_comments_list_element(self):
         """
         :return: Webdriver element pointing at the list of recent comments
@@ -94,3 +108,108 @@ class WPSidebar:
         :return: List of webdriver elements pointing at the recent comment links
         """
         return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_recent_comments_list_xpath + "/li")
+
+    @property
+    def sidebar_archives_element(self):
+        """
+        :return: Webdriver element pointing at the archives widget
+        """
+        return self.driver.find_element_by_id(self.wp_lib.sidebar_archives_id)
+
+    @property
+    def sidebar_archives_title_element(self):
+        """
+        :return: Webdriver element pointing at the archives title
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.sidebar_archives_title_xpath)
+
+    @property
+    def sidebar_archives_title_text(self):
+        """
+        :return: Text from the archives title element
+        """
+        return self.sidebar_archives_title_element.text
+
+    @property
+    def sidebar_archives_list_element(self):
+        """
+        :return: Webdriver element pointing at the list of archives
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.sidebar_archives_list_xpath)
+
+    @property
+    def sidebar_archives_list_items_elements(self):
+        """
+        :return: List of webdriver elements pointing at the archives links
+        """
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_archives_list_xpath + "/li")
+
+    @property
+    def sidebar_categories_element(self):
+        """
+        :return: Webdriver element pointing at the categories widget
+        """
+        return self.driver.find_element_by_id(self.wp_lib.sidebar_categories_id)
+
+    @property
+    def sidebar_categories_title_element(self):
+        """
+        :return: Webdriver element pointing at the categories title
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.sidebar_categories_title_xpath)
+
+    @property
+    def sidebar_categories_title_text(self):
+        """
+        :return: Text from the categories title element
+        """
+        return self.sidebar_categories_title_element.text
+
+    @property
+    def sidebar_categories_list_element(self):
+        """
+        :return: Webdriver element pointing at the list of categories
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.sidebar_categories_list_xpath)
+
+    @property
+    def sidebar_categories_list_items_elements(self):
+        """
+        :return: List of webdriver elements pointing at the categories links
+        """
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_categories_list_xpath + "/li")
+
+    @property
+    def sidebar_meta_element(self):
+        """
+        :return: Webdriver element pointing at the meta widget
+        """
+        return self.driver.find_element_by_id(self.wp_lib.sidebar_meta_id)
+
+    @property
+    def sidebar_meta_title_element(self):
+        """
+        :return: Webdriver element pointing at the meta title
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.sidebar_meta_title_xpath)
+
+    @property
+    def sidebar_meta_title_text(self):
+        """
+        :return: Text from the meta title element
+        """
+        return self.sidebar_meta_title_element.text
+
+    @property
+    def sidebar_meta_list_element(self):
+        """
+        :return: Webdriver element pointing at the list of meta links
+        """
+        return self.driver.find_element_by_xpath(self.wp_lib.sidebar_meta_list_xpath)
+
+    @property
+    def sidebar_meta_list_items_elements(self):
+        """
+        :return: List of webdriver elements pointing at the meta links
+        """
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_meta_list_xpath + "/li")
