@@ -4,7 +4,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 # TestFooter
 # Written by Angela Korra'ti
-# Last updated 2/14/2019
+# Last updated 3/6/2019
 #
 # This class conducts tests against the footer on the homepage of my test Wordpress site.
 
@@ -13,7 +13,8 @@ class TestFooter(BaseTest):
     wp_footer = None
     ac = None
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         """
         Do setup for the test cases.
         """
