@@ -4,7 +4,7 @@ import WPFooter
 
 # WPHomepage
 # Written by Angela Korra'ti
-# Last updated 2/21/2019
+# Last updated 4/24/2019
 #
 # This is a helper class to define the layout of the homepage of the test site.
 
@@ -63,13 +63,6 @@ class WPHomepage:
         """
         site_description_element = self.driver.find_element_by_class_name(self.wp_lib.site_description['class'])
         return site_description_element.text
-
-    @property
-    def primary_menu_element(self):
-        """
-        :return: The Webdriver element that refers to the primary menu.
-        """
-        return self.driver.find_element_by_id(self.wp_lib.menu_id)
 
     @property
     def content_area_element(self):
