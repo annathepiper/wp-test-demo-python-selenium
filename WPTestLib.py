@@ -1,6 +1,6 @@
 # WPTestLib
 # Written by Angela Korra'ti
-# Last updated 2/22/2019
+# Last updated 4/23/2019
 #
 # This is a helper class to contain various test strings, ids, classes, and xpaths.
 
@@ -22,6 +22,9 @@ class WPTestLib:
     site_description = {"class": "site-description", "text": "Just another WordPress site"}
     page_title_class = "page-title"
     entry_title_class = "entry-title"
+
+    # Strings for test Uris
+    wp_post_uri = "/2016/09/13/testing-testing-testing-is-this-thing-on/"
 
     # Strings pertaining to the main content areas.
     content_id = "content"
