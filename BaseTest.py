@@ -1,18 +1,20 @@
 import os
 from selenium import webdriver
-import unittest
 import WPTestLib
+from abc import ABC
+from selenium.webdriver.common.action_chains import ActionChains
 
 # BaseTest
 # Written by Angela Korra'ti
-# Last updated 2/11/2019
+# Last updated 4/24/2019
 #
 # This is the base test class for the other ones in the suite.
 
 
-class BaseTest(unittest.TestCase):
+class BaseTest(ABC):
     driver = None
     wp_lib = None
+    ac = None
 
     def setUp(self):
         """
@@ -23,6 +25,7 @@ class BaseTest(unittest.TestCase):
         self.driver = webdriver.Remote(
             command_executor=self.wp_lib.selenium_host,
             desired_capabilities=caps)
+        self.ac = ActionChains(self.driver)
 
     def tearDown(self):
         """
