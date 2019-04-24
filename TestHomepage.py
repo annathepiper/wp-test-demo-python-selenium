@@ -3,13 +3,14 @@ import WPHomepage
 
 # TestHomepage
 # Written by Angela Korra'ti
-# Last updated 2/14/2019
+# Last updated 4/24/2019
 #
 # This class conducts tests against the homepage of my test Wordpress site.
 
 
 class TestHomepage(BaseTest):
     wp_homepage = None
+    wp_menu = None
 
     def setUp(self):
         """
@@ -18,6 +19,7 @@ class TestHomepage(BaseTest):
         super().setUp()
         self.driver.get(self.wp_lib.wp_base_uri)
         self.wp_homepage = WPHomepage.WPHomepage(self.driver, self.wp_lib)
+        self.wp_menu = self.wp_homepage.wp_menu
 
     def testHomepageTitle(self):
         """
@@ -37,7 +39,7 @@ class TestHomepage(BaseTest):
         """
         Verify that the primary menu is present and visible on the homepage
         """
-        menu = self.wp_homepage.primary_menu_element
+        menu = self.wp_menu.menu_element
         assert menu is not None
         assert menu.is_displayed()
 
@@ -77,14 +79,14 @@ class TestHomepage(BaseTest):
         """
         Verify that the footer social menu is present and visible on the homepage
         """
-        footer_social_menu = self.wp_homepage.wp_footer.footer_social_menu_element
-        assert footer_social_menu is not None
-        assert footer_social_menu.is_displayed()
+        social_menu = self.wp_homepage.wp_footer.social_menu_element
+        assert social_menu is not None
+        assert social_menu.is_displayed()
 
     def testFooterSiteInfoExistsVisible(self):
         """
         Verify that the footer site info section is present and visible on the homepage
         """
-        footer_site_info = self.wp_homepage.wp_footer.footer_site_info_element
-        assert footer_site_info is not None
-        assert footer_site_info.is_displayed()
+        site_info = self.wp_homepage.wp_footer.site_info_element
+        assert site_info is not None
+        assert site_info.is_displayed()
