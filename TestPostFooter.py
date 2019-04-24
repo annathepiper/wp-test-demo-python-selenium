@@ -1,9 +1,9 @@
-from TestHomepageFooter import TestFooter
+from TestFooter import TestFooter
 import WPPost
 
 # TestFooter
 # Written by Angela Korra'ti
-# Last updated 4/23/2019
+# Last updated 4/24/2019
 #
 # This class conducts tests against the footer on a post of my test Wordpress site.
 
