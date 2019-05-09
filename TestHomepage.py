@@ -5,7 +5,7 @@ import WPHomepage
 # Written by Angela Korra'ti
 # Last updated 4/24/2019
 #
-# This class conducts tests against the homepage of my test Wordpress site.
+# This class conducts tests against the homepage of my test WordPress site.
 
 
 class TestHomepage(BaseTest):
@@ -21,21 +21,21 @@ class TestHomepage(BaseTest):
         self.wp_homepage = WPHomepage.WPHomepage(self.driver, self.wp_lib)
         self.wp_menu = self.wp_homepage.wp_menu
 
-    def testHomepageTitle(self):
+    def test_homepage_title(self):
         """
         Verify that the homepage has the correct title
         """
         assert self.wp_homepage.site_title == self.wp_lib.site_title['text']
         assert self.wp_homepage.site_title_element.is_displayed() is True
 
-    def testHomepageDescription(self):
+    def test_homepage_description(self):
         """
         Verify that the homepage has the correct description
         """
         assert self.wp_homepage.site_description == self.wp_lib.site_description['text']
         assert self.wp_homepage.site_description_element.is_displayed() is True
 
-    def testPrimaryMenuExistsVisible(self):
+    def test_primary_menu_exists_visible(self):
         """
         Verify that the primary menu is present and visible on the homepage
         """
@@ -43,7 +43,7 @@ class TestHomepage(BaseTest):
         assert menu is not None
         assert menu.is_displayed()
 
-    def testContentAreaExistsVisible(self):
+    def test_content_area_exists_visible(self):
         """
         Verify that the overall content area is present and visible on the homepage
         """
@@ -51,7 +51,7 @@ class TestHomepage(BaseTest):
         assert content is not None
         assert content.is_displayed()
 
-    def testPrimaryContentAreaExistsVisible(self):
+    def test_primary_content_area_exists_visible(self):
         """
         Verify that the primary content area is present and visible on the homepage
         """
@@ -59,7 +59,7 @@ class TestHomepage(BaseTest):
         assert content is not None
         assert content.is_displayed()
 
-    def testSecondaryContentAreaExistsVisible(self):
+    def test_secondary_content_area_exists_visible(self):
         """
         Verify that the secondary content area is present and visible on the homepage
         """
@@ -67,7 +67,7 @@ class TestHomepage(BaseTest):
         assert content is not None
         assert content.is_displayed()
 
-    def testFooterExistsVisible(self):
+    def test_footer_exists_visible(self):
         """
         Verify that the footer is present and visible on the homepage
         """
@@ -75,7 +75,7 @@ class TestHomepage(BaseTest):
         assert footer is not None
         assert footer.is_displayed()
 
-    def testFooterSocialMenuExistsVisible(self):
+    def test_footer_social_menu_exists_visible(self):
         """
         Verify that the footer social menu is present and visible on the homepage
         """
@@ -83,7 +83,7 @@ class TestHomepage(BaseTest):
         assert social_menu is not None
         assert social_menu.is_displayed()
 
-    def testFooterSiteInfoExistsVisible(self):
+    def test_footer_site_info_exists_visible(self):
         """
         Verify that the footer site info section is present and visible on the homepage
         """
