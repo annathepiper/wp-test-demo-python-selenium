@@ -1,7 +1,7 @@
 from TestFooter import TestFooter
 import WPHomepage
 
-# TestFooter
+# TestHomepageFooter
 # Written by Angela Korra'ti
 # Last updated 4/24/2019
 #
