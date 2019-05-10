@@ -56,7 +56,7 @@ class TestSidebar(BaseTest):
         recent_posts_list = self.wp_sidebar.recent_posts_list_element
         assert recent_posts_list is not None
         assert recent_posts_list.is_displayed()
-        recent_posts_list_items = self.wp_sidebar.recent_posts_list_items_elements
+        recent_posts_list_items = self.wp_sidebar.recent_posts_list_elements
         assert len(recent_posts_list_items) == 5
 
     def verify_recent_comments(self):
@@ -73,7 +73,7 @@ class TestSidebar(BaseTest):
         recent_comments_list = self.wp_sidebar.recent_comments_list_element
         assert recent_comments_list is not None
         assert recent_comments_list.is_displayed()
-        recent_comments_list_items = self.wp_sidebar.recent_comments_list_items_elements
+        recent_comments_list_items = self.wp_sidebar.recent_comments_list_elements
         assert len(recent_comments_list_items) >= 1
 
     def verify_archives(self):
@@ -90,7 +90,7 @@ class TestSidebar(BaseTest):
         archives_list = self.wp_sidebar.archives_list_element
         assert archives_list is not None
         assert archives_list.is_displayed()
-        archives_list_items = self.wp_sidebar.archives_list_items_elements
+        archives_list_items = self.wp_sidebar.archives_list_elements
         assert len(archives_list_items) >= 1
 
     def verify_categories(self):
@@ -107,7 +107,7 @@ class TestSidebar(BaseTest):
         categories_list = self.wp_sidebar.categories_list_element
         assert categories_list is not None
         assert categories_list.is_displayed()
-        categories_list_items = self.wp_sidebar.categories_list_items_elements
+        categories_list_items = self.wp_sidebar.categories_list_elements
         assert len(categories_list_items) >= 1
 
     def verify_meta(self):
@@ -124,5 +124,5 @@ class TestSidebar(BaseTest):
         meta_list = self.wp_sidebar.meta_list_element
         assert meta_list is not None
         assert meta_list.is_displayed()
-        meta_list_items = self.wp_sidebar.meta_list_items_elements
+        meta_list_items = self.wp_sidebar.meta_list_elements
         assert len(meta_list_items) == 4
