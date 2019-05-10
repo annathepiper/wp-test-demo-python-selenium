@@ -2,9 +2,9 @@ import WPMenu
 import WPSidebar
 import WPFooter
 
-# WPHomepage
+# WPPost
 # Written by Angela Korra'ti
-# Last updated 4/24/2019
+# Last updated 5/10/2019
 #
 # This is a helper class to define the layout of a post on the test site.
 
@@ -34,3 +34,67 @@ class WPPost:
         # Initialize the footer object
         self.wp_footer = WPFooter.WPFooter(self.driver, self.wp_lib)
 
+    @property
+    def site_title_element(self):
+        """
+        :return: The Webdriver element that refers to the site title.
+        """
+        return self.driver.find_element_by_class_name(self.wp_lib.site_title['class'])
+
+    @property
+    def site_title(self):
+        """
+        :return: The text of the site title.
+        """
+        site_title_element = self.driver.find_element_by_class_name(self.wp_lib.site_title['class'])
+        return site_title_element.text
+
+    @property
+    def site_description_element(self):
+        """
+        :return: The Webdriver element that refers to the site description.
+        """
+        return self.driver.find_element_by_class_name(self.wp_lib.site_description['class'])
+
+    @property
+    def site_description(self):
+        """
+        :return: The text of the site description.
+        """
+        site_description_element = self.driver.find_element_by_class_name(self.wp_lib.site_description['class'])
+        return site_description_element.text
+
+    @property
+    def content_area_element(self):
+        """
+        :return: The Webdriver element that refers to the overall content area.
+        """
+        return self.driver.find_element_by_id(self.wp_lib.content_id)
+
+    @property
+    def primary_content_area_element(self):
+        """
+        :return: The Webdriver element that refers to the primary content area.
+        """
+        return self.driver.find_element_by_id(self.wp_lib.primary_content_id)
+
+    @property
+    def secondary_content_area_element(self):
+        """
+        :return: The Webdriver element that refers to the secondary content area.
+        """
+        return self.driver.find_element_by_id(self.wp_lib.secondary_content_id)
+
+    @property
+    def post_title_element(self):
+        """
+        :return: The Webdriver element that refers to the post title.
+        """
+        return self.driver.find_element_by_class_name(self.wp_lib.entry_title_class)
+
+    @property
+    def post_title_text(self):
+        """
+        :return: The text of the post title.
+        """
+        return self.post_title_element.text
