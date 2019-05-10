@@ -1,9 +1,8 @@
 from BaseTest import BaseTest
-import WPHomepage
 
 # TestMenu
 # Written by Angela Korra'ti
-# Last updated 2/14/2019
+# Last updated 5/10/2019
 #
 # This class conducts tests against the main menu of my test Wordpress site.
 
@@ -11,181 +10,88 @@ import WPHomepage
 class TestMenu(BaseTest):
     wp_menu = None
 
-    def setUp(self):
+    def set_wp_menu(self, wp_menu):
         """
-        Do setup for the test cases.
+        Setup function to set the class variable wp_menu used in child tests.
         """
-        super().setUp()
-        self.driver.get(self.wp_lib.wp_base_uri)
-        self.wp_menu = WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_menu
+        self.wp_menu = wp_menu
 
-    def TestMenuExistsVisible(self):
+    def verify_home_menu(self):
         """
-        Verify that the main menu is present and visible
-        """
-        menu_element = self.wp_menu.menu_element
-        assert menu_element is not None
-        assert menu_element.is_displayed()
-
-    def TestHomeMenuExistsVisible(self):
-        """
-        Verify that the Home menu is present and visible        
+        Verify the Home menu is present, visible, and has the correct text and destination
         """
         home_menu_element = self.wp_menu.home_menu_element
         assert home_menu_element is not None
         assert home_menu_element.is_displayed()
-
-    def TestHomeMenuText(self):
-        """
-        Verify the Home menu text is correct
-        """
-        assert self.wp_menu.home_menu_text == self.wp_lib.menu_home['text']
-
-    def TestHomeMenuLink(self):
-        """
-        Verify the Home menu link is correct
-        """
-        assert self.wp_menu.home_menu_link == self.wp_lib.menu_home['link']
-
-    def TestHomeMenuLinkClick(self):
-        """
-        Verify clicking the Home menu link lands you on the homepage        
-        """
+        assert self.wp_menu.home_menu_text == self.wp_lib.menu_home['text'], "Home menu does not have correct text."
+        assert self.wp_menu.home_menu_link == self.wp_lib.menu_home['link'], "Home menu does not have correct link."
         self.wp_menu.home_menu_element.click()
-        assert self.driver.current_url == self.wp_menu.home_menu_link
+        assert self.driver.current_url == self.wp_menu.home_menu_link, \
+            "Clicking on Home does not go to correct destination."
 
-    def TestAboutMenuExistsVisible(self):
+    def verify_about_menu(self):
         """
-        Verify that the About menu is present and visible
+        Verify the About menu is present, visible, and has the correct text and destination
         """
         about_menu_element = self.wp_menu.about_menu_element
         assert about_menu_element is not None
         assert about_menu_element.is_displayed()
-
-    def TestAboutMenuText(self):
-        """
-        Verify the About menu text is correct
-        """
-        assert self.wp_menu.about_menu_text == self.wp_lib.menu_about['text']
-
-    def TestAboutMenuLink(self):
-        """
-        Verify the About menu link is correct
-        """
-        assert self.wp_menu.about_menu_link == self.wp_lib.menu_about['link']
-
-    def TestAboutMenuLinkClick(self):
-        """
-        Verify clicking the About menu link lands you on the About page
-        """
+        assert self.wp_menu.about_menu_text == self.wp_lib.menu_about['text'], "About menu does not have correct text."
+        assert self.wp_menu.about_menu_link == self.wp_lib.menu_about['link'], "About menu does not have correct link."
         self.wp_menu.about_menu_element.click()
-        assert self.driver.current_url == self.wp_menu.about_menu_link
+        assert self.driver.current_url == self.wp_menu.about_menu_link, \
+            "Clicking on About does not go to correct destination."
 
-    def TestBooksMenuExistsVisible(self):
+    def verify_books_menu(self):
         """
-        Verify that the Books menu is present and visible
+        Verify the Books menu is present, visible, and has the correct text and destination
         """
         books_menu_element = self.wp_menu.books_menu_element
         assert books_menu_element is not None
         assert books_menu_element.is_displayed()
-
-    def TestBooksMenuText(self):
-        """
-        Verify the Books menu text is correct
-        """
-        assert self.wp_menu.books_menu_text == self.wp_lib.menu_books['text']
-
-    def TestBooksMenuLink(self):
-        """
-        Verify the Books menu link is correct
-        """
-        assert self.wp_menu.books_menu_link == self.wp_lib.menu_books['link']
-
-    def TestBooksMenuLinkClick(self):
-        """
-        Verify clicking the Books menu link lands you on the Books page
-        """
+        assert self.wp_menu.books_menu_text == self.wp_lib.menu_books['text'], "Books menu does not have correct text."
+        assert self.wp_menu.books_menu_link == self.wp_lib.menu_books['link'], "Books menu does not have correct link."
         self.wp_menu.books_menu_element.click()
-        assert self.driver.current_url == self.wp_menu.books_menu_link
+        assert self.driver.current_url == self.wp_menu.books_menu_link, \
+            "Clicking on Books does not go to correct destination."
 
-    def TestBlogMenuExistsVisible(self):
+    def verify_blog_menu(self):
         """
-        Verify that the Blog menu is present and visible
+        Verify the Blog menu is present, visible, and has the correct text and destination
         """
         blog_menu_element = self.wp_menu.blog_menu_element
         assert blog_menu_element is not None
         assert blog_menu_element.is_displayed()
-
-    def TestBlogMenuText(self):
-        """
-        Verify the Blog menu text is correct
-        """
-        assert self.wp_menu.blog_menu_text == self.wp_lib.menu_blog['text']
-
-    def TestBlogMenuLink(self):
-        """
-        Verify the Blog menu link is correct
-        """
-        assert self.wp_menu.blog_menu_link == self.wp_lib.menu_blog['link']
-
-    def TestBlogMenuLinkClick(self):
-        """
-        Verify clicking the Blog menu link lands you on the Blog page
-        """
+        assert self.wp_menu.blog_menu_text == self.wp_lib.menu_blog['text'], "Blog menu does not have correct text."
+        assert self.wp_menu.blog_menu_link == self.wp_lib.menu_blog['link'], "Blog menu does not have correct link."
         self.wp_menu.blog_menu_element.click()
-        assert self.driver.current_url == self.wp_menu.blog_menu_link
+        assert self.driver.current_url == self.wp_menu.blog_menu_link, \
+            "Clicking on Blog does not go to correct destination."
 
-    def TestContactMenuExistsVisible(self):
+    def verify_contact_menu(self):
         """
-        Verify that the Contact menu is present and visible
+        Verify the Contact menu is present, visible, and has the correct text and destination
         """
         contact_menu_element = self.wp_menu.contact_menu_element
         assert contact_menu_element is not None
         assert contact_menu_element.is_displayed()
-
-    def TestContactMenuText(self):
-        """
-        Verify the Contact menu text is correct
-        """
-        assert self.wp_menu.contact_menu_text == self.wp_lib.menu_contact['text']
-
-    def TestContactMenuLink(self):
-        """
-        Verify the Contact menu link is correct
-        """
-        assert self.wp_menu.contact_menu_link == self.wp_lib.menu_contact['link']
-
-    def TestContactMenuLinkClick(self):
-        """
-        Verify clicking the Contact menu link lands you on the Contact page
-        """
+        assert self.wp_menu.contact_menu_text == self.wp_lib.menu_contact['text'], \
+            "Contact menu does not have correct text."
+        assert self.wp_menu.contact_menu_link == self.wp_lib.menu_contact['link'], \
+            "Contact menu does not have correct link."
         self.wp_menu.contact_menu_element.click()
-        assert self.driver.current_url == self.wp_menu.contact_menu_link
+        assert self.driver.current_url == self.wp_menu.contact_menu_link, \
+            "Clicking on Contact does not go to correct destination."
 
-    def TestStoreMenuExistsVisible(self):
+    def verify_store_menu(self):
         """
-        Verify that the Store menu is present and visible
+        Verify the Store menu is present, visible, and has the correct text and destination
         """
         store_menu_element = self.wp_menu.store_menu_element
         assert store_menu_element is not None
         assert store_menu_element.is_displayed()
-
-    def TestStoreMenuText(self):
-        """
-        Verify the Store menu text is correct
-        """
-        assert self.wp_menu.store_menu_text == self.wp_lib.menu_store['text']
-
-    def TestStoreMenuLink(self):
-        """
-        Verify the Store menu link is correct
-        """
-        assert self.wp_menu.store_menu_link == self.wp_lib.menu_store['link']
-
-    def TestStoreMenuLinkClick(self):
-        """
-        Verify clicking the Store menu link lands you on the Store page
-        """
+        assert self.wp_menu.store_menu_text == self.wp_lib.menu_store['text'], "Store menu does not have correct text."
+        assert self.wp_menu.store_menu_link == self.wp_lib.menu_store['link'], "Store menu does not have correct link."
         store_menu_link = self.wp_menu.store_menu_link
         self.wp_menu.store_menu_element.click()
-        assert self.driver.current_url == store_menu_link
+        assert self.driver.current_url == store_menu_link, "Clicking on Store does not go to correct destination."
