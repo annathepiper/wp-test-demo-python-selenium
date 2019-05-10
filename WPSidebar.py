@@ -68,11 +68,11 @@ class WPSidebar:
         return self.driver.find_element_by_xpath(self.wp_lib.sidebar_recent_posts_list_xpath)
 
     @property
-    def recent_posts_list_items_elements(self):
+    def recent_posts_list_elements(self):
         """
         :return: List of webdriver elements pointing at the recent post links
         """
-        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_recent_posts_list_xpath + "/li")
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_recent_posts_list_xpath + "/li/a")
 
     @property
     def recent_comments_element(self):
@@ -103,11 +103,11 @@ class WPSidebar:
         return self.driver.find_element_by_xpath(self.wp_lib.sidebar_recent_comments_list_xpath)
 
     @property
-    def recent_comments_list_items_elements(self):
+    def recent_comments_list_elements(self):
         """
         :return: List of webdriver elements pointing at the recent comment links
         """
-        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_recent_comments_list_xpath + "/li")
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_recent_comments_list_xpath + "/li/a")
 
     @property
     def archives_element(self):
@@ -138,11 +138,11 @@ class WPSidebar:
         return self.driver.find_element_by_xpath(self.wp_lib.sidebar_archives_list_xpath)
 
     @property
-    def archives_list_items_elements(self):
+    def archives_list_elements(self):
         """
         :return: List of webdriver elements pointing at the archives links
         """
-        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_archives_list_xpath + "/li")
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_archives_list_xpath + "/li/a")
 
     @property
     def categories_element(self):
@@ -173,11 +173,11 @@ class WPSidebar:
         return self.driver.find_element_by_xpath(self.wp_lib.sidebar_categories_list_xpath)
 
     @property
-    def categories_list_items_elements(self):
+    def categories_list_elements(self):
         """
         :return: List of webdriver elements pointing at the categories links
         """
-        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_categories_list_xpath + "/li")
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_categories_list_xpath + "/li/a")
 
     @property
     def meta_element(self):
@@ -208,8 +208,8 @@ class WPSidebar:
         return self.driver.find_element_by_xpath(self.wp_lib.sidebar_meta_list_xpath)
 
     @property
-    def meta_list_items_elements(self):
+    def meta_list_elements(self):
         """
         :return: List of webdriver elements pointing at the meta links
         """
-        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_meta_list_xpath + "/li")
+        return self.driver.find_elements_by_xpath(self.wp_lib.sidebar_meta_list_xpath + "/li/a")
