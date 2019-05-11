@@ -15,7 +15,7 @@ class TestPostMenu(TestMenu):
         Do setup for the test cases.
         """
         super().setUp()
-        self.driver.get(self.wp_lib.wp_base_uri)
+        self.driver.get(self.wp_lib.wp_post_uri)
         super().set_wp_menu(WPPost.WPPost(self.driver, self.wp_lib).wp_menu)
 
     def test_home_menu(self):
