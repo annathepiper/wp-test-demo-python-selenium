@@ -16,7 +16,7 @@ class TestPostSidebarLinks(TestSidebarLinks):
         Do setup for the test cases.
         """
         super().setUp()
-        self.driver.get(self.wp_lib.wp_base_uri)
+        self.driver.get(self.wp_lib.wp_post_uri)
         super().set_wp_sidebar(WPPost.WPPost(self.driver, self.wp_lib).wp_sidebar)
 
     def test_recent_posts_link_click(self):
