@@ -12,6 +12,7 @@ class WPTestLib:
         if host is not None:
             self.host = host
         self.wp_base_uri = self.wp_base_uri % (self.protocol, self.host)
+        self.wp_post_uri = self.wp_base_uri + self.wp_post_uri
 
     # These values are all top-level things about the site and the Selenium hub
     selenium_host = "http://localhost:4444/wd/hub"
