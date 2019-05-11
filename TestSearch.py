@@ -1,6 +1,5 @@
 from selenium.webdriver.common.keys import Keys
 from BaseTest import BaseTest
-import WPHomepage
 
 # TestSearch
 # Written by Angela Korra'ti
@@ -12,15 +11,13 @@ import WPHomepage
 class TestSearch(BaseTest):
     wp_sidebar = None
 
-    def setUp(self):
+    def set_wp_sidebar(self, wp_sidebar):
         """
-        Do setup for the test cases.
+        Setup function to set the class variable wp_sidebar used in child tests.
         """
-        super().setUp()
-        self.driver.get(self.wp_lib.wp_base_uri)
-        self.wp_sidebar = WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_sidebar
+        self.wp_sidebar = wp_sidebar
 
-    def test_search_faerie_blood_enter(self):
+    def verify_search_faerie_blood_enter(self):
         """
         Verify searching for 'Faerie Blood' and pressing Enter works as expected
         """
@@ -37,7 +34,7 @@ class TestSearch(BaseTest):
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.search_results_string + self.wp_lib.search_string
 
-    def test_search_faerie_blood_click(self):
+    def verify_search_faerie_blood_click(self):
         """
         Verify searching for 'Faerie Blood' and clicking search button works as expected
         """
@@ -55,7 +52,7 @@ class TestSearch(BaseTest):
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.search_results_string + self.wp_lib.search_string
 
-    def test_search_wards_enter(self):
+    def verify_search_wards_enter(self):
         """
         Verify searching for 'Walk the Wards' and pressing Enter works as expected
         """
@@ -72,7 +69,7 @@ class TestSearch(BaseTest):
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.search_no_results_message
 
-    def test_search_wards_click(self):
+    def verify_search_wards_click(self):
         """
         Verify searching for 'Walk the Wards' and clicking search button works as expected
         """
