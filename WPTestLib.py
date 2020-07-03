@@ -56,7 +56,7 @@ class WPTestLib:
     menu_contact = {"XPath": "//*[@id='menu-primary']/li[5]/a", "text": "Contact",
                    "link": "http://wordpress.local/contact/"}
     menu_store = {"XPath": "//*[@id='menu-primary']/li[6]/a", "text": "Store",
-                 "link": "https://squareup.com/market/angela-korrati"}
+                 "link": "https://angela-korrati.square.site/"}
 
     # Secondary menu items for the Home menu
     submenu_home = {"XPath": "//*[@id='menu-primary']/li[1]/ul/li/a", "text": "Angelahighland.com",
