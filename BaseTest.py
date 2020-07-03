@@ -1,12 +1,12 @@
 import os
 from selenium import webdriver
 import WPTestLib
-from abc import ABC
 from selenium.webdriver.common.action_chains import ActionChains
+from abc import ABC
 
 # BaseTest
 # Written by Angela Korra'ti
-# Last updated 4/24/2019
+# Last updated 4/26/2019
 #
 # This is the base test class for the other ones in the suite.
 

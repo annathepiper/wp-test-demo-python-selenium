@@ -1,6 +1,6 @@
 # WPTestLib
 # Written by Angela Korra'ti
-# Last updated 4/23/2019
+# Last updated 5/10/2019
 #
 # This is a helper class to contain various test strings, ids, classes, and xpaths.
 
@@ -12,6 +12,7 @@ class WPTestLib:
         if host is not None:
             self.host = host
         self.wp_base_uri = self.wp_base_uri % (self.protocol, self.host)
+        self.wp_post_uri = self.wp_base_uri + self.wp_post_uri
 
     # These values are all top-level things about the site and the Selenium hub
     selenium_host = "http://localhost:4444/wd/hub"
@@ -25,6 +26,7 @@ class WPTestLib:
 
     # Strings for test Uris
     wp_post_uri = "/2016/09/13/testing-testing-testing-is-this-thing-on/"
+    post_title = "Testing, testing, testing, is this thing on?"
 
     # Strings pertaining to the main content areas.
     content_id = "content"

@@ -1,31 +1,28 @@
 from selenium.webdriver.common.keys import Keys
 from BaseTest import BaseTest
-import WPHomepage
 
 # TestSearch
 # Written by Angela Korra'ti
-# Last updated 2/22/2019
+# Last updated 5/10/2019
 #
-# This class conducts search tests against my test Wordpress site.
+# This class conducts search tests against my test WordPress site.
 
 
 class TestSearch(BaseTest):
     wp_sidebar = None
 
-    def setUp(self):
+    def set_wp_sidebar(self, wp_sidebar):
         """
-        Do setup for the test cases.
+        Setup function to set the class variable wp_sidebar used in child tests.
         """
-        super().setUp()
-        self.driver.get(self.wp_lib.wp_base_uri)
-        self.wp_sidebar = WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_sidebar
+        self.wp_sidebar = wp_sidebar
 
-    def TestSearchForFaerieBloodPressEnter(self):
+    def verify_search_faerie_blood_enter(self):
         """
         Verify searching for 'Faerie Blood' and pressing Enter works as expected
         """
         # Do the search
-        search_input = self.wp_sidebar.sidebar_search_input_element
+        search_input = self.wp_sidebar.search_input_element
         search_input.send_keys(self.wp_lib.search_string + Keys.RETURN)
 
         # Make sure we land on the correct URL
@@ -37,14 +34,14 @@ class TestSearch(BaseTest):
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.search_results_string + self.wp_lib.search_string
 
-    def TestSearchForFaerieBloodClick(self):
+    def verify_search_faerie_blood_click(self):
         """
         Verify searching for 'Faerie Blood' and clicking search button works as expected
         """
         # Do the search
-        search_input = self.wp_sidebar.sidebar_search_input_element
+        search_input = self.wp_sidebar.search_input_element
         search_input.send_keys(self.wp_lib.search_string)
-        self.wp_sidebar.sidebar_search_button_element.click()
+        self.wp_sidebar.search_button_element.click()
 
         # Make sure we land on the correct URL
         assert self.driver.current_url == self.wp_lib.wp_base_uri + self.wp_lib.search_uri
@@ -55,12 +52,12 @@ class TestSearch(BaseTest):
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.search_results_string + self.wp_lib.search_string
 
-    def TestSearchForWalkTheWardsPressEnter(self):
+    def verify_search_wards_enter(self):
         """
         Verify searching for 'Walk the Wards' and pressing Enter works as expected
         """
         # Do the search
-        search_input = self.wp_sidebar.sidebar_search_input_element
+        search_input = self.wp_sidebar.search_input_element
         search_input.send_keys(self.wp_lib.search_no_results_string + Keys.RETURN)
 
         # Make sure we land on the correct URL
@@ -72,14 +69,14 @@ class TestSearch(BaseTest):
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.search_no_results_message
 
-    def TestSearchForWalkTheWardsClick(self):
+    def verify_search_wards_click(self):
         """
         Verify searching for 'Walk the Wards' and clicking search button works as expected
         """
         # Do the search
-        search_input = self.wp_sidebar.sidebar_search_input_element
+        search_input = self.wp_sidebar.search_input_element
         search_input.send_keys(self.wp_lib.search_no_results_string)
-        self.wp_sidebar.sidebar_search_button_element.click()
+        self.wp_sidebar.search_button_element.click()
 
         # Make sure we land on the correct URL
         assert self.driver.current_url == self.wp_lib.wp_base_uri + self.wp_lib.search_no_results_uri
