@@ -24,6 +24,9 @@ Overall, I'm setting up this suite in Python similarly to how I wrote similar te
 ## Why Nose?
 I'm aware that the original version of Nose is in maintenance mode, and its docs do encourage people to use Nose2 instead. For the time being, though, I'm using Nose as that's what I'm most immediately familiar with. Time permitting, I'll be updating this suite to use Nose2.
 
+## Running the code on a Linux environment
+This code has been successfully most recently run against PyCharm Community Edition 2020.1.2, on an Ubuntu Linux install (Ubuntu 20.04 LTS) with Python version 3.8 installed.
+
 ## Reference links
 * [Misc-configs repo](https://github.com/annathepiper/misc-configs) where I store my Docker Compose yml files
 * [Java version of this project](https://github.com/annathepiper/wp-test-demo-java-selenium)
