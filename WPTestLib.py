@@ -42,8 +42,8 @@ class WPTestLib:
                       "link": "https://wordpress.org/"}
     footer_social_facebook = {"XPath": "//ul[@id='menu-social-1']/li[1]/a", "text": "Facebook",
                               "link": "https://www.facebook.com/annathepiper"}
-    footer_social_twitter = {"XPath": "//ul[@id='menu-social-1']/li[2]/a", "text": "Twitter",
-                             "link": "https://twitter.com/annathepiper"}
+    footer_social_mastodon = {"XPath": "//ul[@id='menu-social-1']/li[2]/a", "text": "Mastodon",
+                             "link": "https://mastodon.murkworks.net/@annathepiper"}
     footer_social_github = {"XPath": "//ul[@id='menu-social-1']/li[3]/a", "text": "GitHub",
                           "link": "https://github.com/annathepiper"}
     footer_social_linkedin = {"XPath": "//ul[@id='menu-social-1']/li[4]/a", "text": "LinkedIn",
@@ -92,23 +92,23 @@ class WPTestLib:
     sidebar_recent_posts_id = "recent-posts-2"
     sidebar_recent_posts_title_xpath = "//*[@id='recent-posts-2']/h2"
     sidebar_recent_posts_title_text = "RECENT POSTS"
-    sidebar_recent_posts_list_xpath = "//*[@id='recent-posts-2']/ul"
+    sidebar_recent_posts_list_xpath = "//*[@id='recent-posts-2']/*/ul"
     sidebar_recent_comments_id = "recent-comments-2"
     sidebar_recent_comments_title_xpath = "//*[@id='recent-comments-2']/h2"
     sidebar_recent_comments_title_text = "RECENT COMMENTS"
-    sidebar_recent_comments_list_xpath = "//*[@id='recent-comments-2']/ul"
+    sidebar_recent_comments_list_xpath = "//*[@id='recent-comments-2']/*/ul"
     sidebar_archives_id = "archives-2"
     sidebar_archives_title_xpath = "//*[@id='archives-2']/h2"
     sidebar_archives_title_text = "ARCHIVES"
-    sidebar_archives_list_xpath = "//*[@id='archives-2']/ul"
+    sidebar_archives_list_xpath = "//*[@id='archives-2']/*/ul"
     sidebar_categories_id = "categories-2"
     sidebar_categories_title_xpath = "//*[@id='categories-2']/h2"
     sidebar_categories_title_text = "CATEGORIES"
-    sidebar_categories_list_xpath = "//*[@id='categories-2']/ul"
+    sidebar_categories_list_xpath = "//*[@id='categories-2']/*/ul"
     sidebar_meta_id = "meta-2"
     sidebar_meta_title_xpath = "//*[@id='meta-2']/h2"
     sidebar_meta_title_text = "META"
-    sidebar_meta_list_xpath = "//*[@id='meta-2']/ul"
+    sidebar_meta_list_xpath = "//*[@id='meta-2']/*/ul"
 
     # Strings pertaining to search
     search_string = "Faerie Blood"
@@ -123,7 +123,7 @@ class WPTestLib:
     recent_posts_title = "angelahighland.info domain now active"
 
     # Strings pertaining to testing clicking on Recent Comments
-    recent_comments_uri = "/2016/09/12/hello-readers/#comment-2"
+    recent_comments_uri = "/2016/09/12/hello-readers/#comment-3"
     recent_comments_title = "Hello, readers!"
 
     # Strings pertaining to testing clicking on Archives

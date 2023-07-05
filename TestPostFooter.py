@@ -3,7 +3,7 @@ import WPPost
 
 # TestFooter
 # Written by Angela Korra'ti
-# Last updated 4/26/2019
+# Last updated 7/5/2023
 #
 # This class conducts tests against the footer on a post of my test Wordpress site.
 
@@ -35,11 +35,11 @@ class TestPostFooter(TestFooter):
         """
         self.verify_social_facebook()
 
-    def test_social_twitter(self):
+    def test_social_mastodon(self):
         """
-        Verify the footer Twitter element on a post
+        Verify the footer Mastodon element on a post
         """
-        self.verify_social_twitter()
+        self.verify_social_mastodon()
 
     def test_social_github(self):
         """

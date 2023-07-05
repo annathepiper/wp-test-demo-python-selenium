@@ -2,7 +2,7 @@ from BaseTest import BaseTest
 
 # TestFooter
 # Written by Angela Korra'ti
-# Last updated 4/26/2019
+# Last updated 7/5/2023
 #
 # Parent class for testing the footer. This class conducts tests against the homepage. Child classes will do
 # appropriate setup to test other pages.
@@ -59,23 +59,24 @@ class TestFooter(BaseTest):
         self.ac.move_to_element(self.wp_footer.footer_element).perform()
         self.ac.move_to_element(self.wp_footer.social_facebook_element).perform()
         self.wp_footer.social_facebook_element.click()
-        assert self.driver.current_url == self.wp_lib.footer_social_facebook['link'],\
+        facebook_wants_login = "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fannathepiper";
+        assert self.driver.current_url == facebook_wants_login,\
             "Clicking on Facebook link doesn't go to expected destination."
 
-    def verify_social_twitter(self):
+    def verify_social_mastodon(self):
         """
-        Verify the footer Twitter element is present and visible, and has the correct text and destination.
+        Verify the footer Mastodon element is present and visible, and has the correct text and destination.
         """
-        twitter_element = self.wp_footer.social_twitter_element
-        assert twitter_element is not None
-        assert twitter_element.is_displayed()
-        assert self.wp_footer.social_twitter_text == self.wp_lib.footer_social_twitter['text'],\
-            "Twitter link doesn't have correct text."
+        mastodon_element = self.wp_footer.social_mastodon_element
+        assert mastodon_element is not None
+        assert mastodon_element.is_displayed()
+        assert self.wp_footer.social_mastodon_text == self.wp_lib.footer_social_mastodon['text'],\
+            "Mastodon link doesn't have correct text."
         self.ac.move_to_element(self.wp_footer.footer_element).perform()
-        self.ac.move_to_element(self.wp_footer.social_twitter_element).perform()
-        self.wp_footer.social_twitter_element.click()
-        assert self.driver.current_url == self.wp_lib.footer_social_twitter['link'],\
-            "Clicking on Twitter link doesn't go to correct destination."
+        self.ac.move_to_element(self.wp_footer.social_mastodon_element).perform()
+        self.wp_footer.social_mastodon_element.click()
+        assert self.driver.current_url == self.wp_lib.footer_social_mastodon['link'],\
+            "Clicking on Mastodon link doesn't go to correct destination."
 
     def verify_social_github(self):
         """
@@ -104,4 +105,10 @@ class TestFooter(BaseTest):
         self.ac.move_to_element(self.wp_footer.footer_element).perform()
         self.ac.move_to_element(self.wp_footer.social_linkedin_element).perform()
         self.wp_footer.social_linkedin_element.click()
-        assert self.driver.current_url.startswith("https://www.linkedin.com")
+
+        # 7/5/2023 Current behavior of LinkedIn link is that sometimes the link has a referer
+        # parameter on the end and sometimes it doesn't, so let's check for both possibilities
+        linkedin_referer_suffix = "?original_referer=http%3A%2F%2Fwordpress.local%2F"
+        assert (self.driver.current_url == self.wp_lib.footer_social_linkedin['link']) or \
+               (self.driver.current_url == self.wp_lib.footer_social_linkedin['link'] + \
+                linkedin_referer_suffix)
