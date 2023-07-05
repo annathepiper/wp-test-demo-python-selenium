@@ -1,6 +1,6 @@
 # WPFooter
 # Written by Angela Korra'ti
-# Last updated 4/24/2019
+# Last updated 7/5/2023
 #
 # This is a helper class to define the layout of the footer. Used in turn by page level classes.
 
@@ -82,18 +82,18 @@ class WPFooter:
         return self.social_facebook_element.text
 
     @property
-    def social_twitter_element(self):
+    def social_mastodon_element(self):
         """
-        :return: The Webdriver element that refers to the Twitter link in the social section of the footer
+        :return: The Webdriver element that refers to the Mastodon link in the social section of the footer
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.footer_social_twitter['XPath'])
+        return self.driver.find_element_by_xpath(self.wp_lib.footer_social_mastodon['XPath'])
 
     @property
-    def social_twitter_text(self):
+    def social_mastodon_text(self):
         """
-        :return: The text of the footer social Twitter link
+        :return: The text of the footer social Mastodon link
         """
-        return self.social_twitter_element.text
+        return self.social_mastodon_element.text
 
     @property
     def social_github_element(self):

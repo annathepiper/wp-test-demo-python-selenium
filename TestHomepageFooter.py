@@ -3,7 +3,7 @@ import WPHomepage
 
 # TestHomepageFooter
 # Written by Angela Korra'ti
-# Last updated 4/24/2019
+# Last updated 7/5/2023
 #
 # This class conducts tests against the footer on the homepage of my test Wordpress site.
 
@@ -36,11 +36,11 @@ class TestHomepageFooter(TestFooter):
         """
         self.verify_social_facebook()
 
-    def test_social_twitter(self):
+    def test_social_mastodon(self):
         """
-        Verify the footer Twitter element on the homepage
+        Verify the footer Mastodon element on the homepage
         """
-        self.verify_social_twitter()
+        self.verify_social_mastodon()
 
     def test_social_github(self):
         """
