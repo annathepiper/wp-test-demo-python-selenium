@@ -59,8 +59,12 @@ class TestFooter(BaseTest):
         self.ac.move_to_element(self.wp_footer.footer_element).perform()
         self.ac.move_to_element(self.wp_footer.social_facebook_element).perform()
         self.wp_footer.social_facebook_element.click()
+
+        # 7/6/2023 Current behavior seems to be that Facebook may sometimes ask for a login
+        # and sometimes not. So I'm going to check for both scenarios.
         facebook_wants_login = "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fannathepiper";
-        assert self.driver.current_url == facebook_wants_login,\
+        assert self.driver.current_url == facebook_wants_login or \
+            self.driver.current_url == self.wp_lib.footer_social_facebook['link'], \
             "Clicking on Facebook link doesn't go to expected destination."
 
     def verify_social_mastodon(self):

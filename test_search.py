@@ -3,7 +3,7 @@ from BaseTest import BaseTest
 
 # TestSearch
 # Written by Angela Korra'ti
-# Last updated 5/10/2019
+# Last updated 7/5/2023
 #
 # This class conducts search tests against my test WordPress site.
 

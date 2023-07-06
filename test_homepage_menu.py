@@ -1,20 +1,20 @@
-from TestMenu import TestMenu
+from test_menu import TestMenu
 import WPHomepage
 
 # TestHomepageMenu
 # Written by Angela Korra'ti
-# Last updated 5/10/2019
+# Last updated 7/6/2023
 #
 # This class conducts tests against the menu on the homepage of my test WordPress site.
 
 
 class TestHomepageMenu(TestMenu):
 
-    def setUp(self):
+    def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setUp()
+        super().setup_method()
         self.driver.get(self.wp_lib.wp_base_uri)
         super().set_wp_menu(WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_menu)
 

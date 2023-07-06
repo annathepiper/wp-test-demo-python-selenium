@@ -1,9 +1,9 @@
-from TestSearch import TestSearch
+from test_search import TestSearch
 import WPPost
 
 # TestPostSearch
 # Written by Angela Korra'ti
-# Last updated 5/10/2019
+# Last updated 7/6/2023
 #
 # This class conducts search tests against my test WordPress site.
 
@@ -11,11 +11,11 @@ import WPPost
 class TestPostSearch(TestSearch):
     wp_sidebar = None
 
-    def setUp(self):
+    def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setUp()
+        super().setup_method()
         self.driver.get(self.wp_lib.wp_post_uri)
         self.wp_sidebar = WPPost.WPPost(self.driver, self.wp_lib).wp_sidebar
 

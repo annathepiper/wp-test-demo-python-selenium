@@ -3,7 +3,7 @@ import WPPost
 
 # TestSidebarLinks
 # Written by Angela Korra'ti
-# Last updated 5/10/2019
+# Last updated 7/5/2023
 #
 # This class conducts tests against the sidebar of my test WordPress site.
 
