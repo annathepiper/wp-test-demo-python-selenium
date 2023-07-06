@@ -6,7 +6,7 @@ from abc import ABC
 
 # BaseTest
 # Written by Angela Korra'ti
-# Last updated 4/26/2019
+# Last updated 7/5/2023
 #
 # This is the base test class for the other ones in the suite.
 
@@ -16,7 +16,7 @@ class BaseTest(ABC):
     wp_lib = None
     ac = None
 
-    def setUp(self):
+    def setup_method(self):
         """
         Global setup function for all test classes that are children of BaseTest
         """
@@ -27,7 +27,7 @@ class BaseTest(ABC):
             desired_capabilities=caps)
         self.ac = ActionChains(self.driver)
 
-    def tearDown(self):
+    def teardown_method(self):
         """
         Global teardown function for all test classes that are children of BaseTest
         :return:

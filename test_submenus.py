@@ -4,7 +4,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 # TestSubmenus
 # Written by Angela Korra'ti
-# Last updated 5/10/2019
+# Last updated 7/5/2023
 #
 # This class conducts tests against the menu dropdowns on the main menu of my test Wordpress site.
 

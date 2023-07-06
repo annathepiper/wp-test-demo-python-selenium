@@ -3,7 +3,7 @@ import WPPost
 
 # TestPost
 # Written by Angela Korra'ti
-# Last updated 5/10/2019
+# Last updated 7/6/2023
 #
 # This class conducts tests against a post on my test WordPress site.
 
@@ -12,11 +12,11 @@ class TestPost(BaseTest):
     wp_post = None
     wp_menu = None
 
-    def setUp(self):
+    def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setUp()
+        super().setup_method()
         self.driver.get(self.wp_lib.wp_post_uri)
         self.wp_post = WPPost.WPPost(self.driver, self.wp_lib)
         self.wp_menu = self.wp_post.wp_menu

@@ -1,20 +1,20 @@
-from TestFooter import TestFooter
+from test_footer import TestFooter
 import WPHomepage
 
 # TestHomepageFooter
 # Written by Angela Korra'ti
-# Last updated 7/5/2023
+# Last updated 7/6/2023
 #
 # This class conducts tests against the footer on the homepage of my test Wordpress site.
 
 
 class TestHomepageFooter(TestFooter):
 
-    def setUp(self):
+    def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setUp()
+        super().setup_method()
         self.driver.get(self.wp_lib.wp_base_uri)
         super().set_wp_footer(WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_footer)
 
