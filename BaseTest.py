@@ -3,6 +3,7 @@ from selenium import webdriver
 import WPTestLib
 from selenium.webdriver.common.action_chains import ActionChains
 from abc import ABC
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 # BaseTest
 # Written by Angela Korra'ti
@@ -21,10 +22,9 @@ class BaseTest(ABC):
         Global setup function for all test classes that are children of BaseTest
         """
         self.wp_lib = WPTestLib.WPTestLib()
-        caps = {'browserName': os.getenv('BROWSER', 'chrome')}
-        self.driver = webdriver.Remote(
-            command_executor=self.wp_lib.selenium_host,
-            desired_capabilities=caps)
+        options = ChromeOptions()
+        options.set_capability('browserName', os.getenv('BROWSER', 'chrome'))
+        self.driver = webdriver.Remote(self.wp_lib.selenium_host, options=options)
         self.ac = ActionChains(self.driver)
 
     def teardown_method(self):
