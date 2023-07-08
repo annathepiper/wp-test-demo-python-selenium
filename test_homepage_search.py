@@ -1,9 +1,10 @@
 from test_search import TestSearch
 import WPHomepage
+from selenium.webdriver.common.by import By
 
 # TestHomepageSearch
 # Written by Angela Korra'ti
-# Last updated 7/6/2023
+# Last updated 7/7/2023
 #
 # This class conducts search tests against my test WordPress site.
 
@@ -50,7 +51,7 @@ class TestHomepageSearch(TestSearch):
         assert self.driver.current_url == self.wp_lib.wp_base_uri + self.wp_lib.search_no_results_uri
 
         # Make sure the search string is appropriately reflected in the page title
-        page_title = self.driver.find_element_by_class_name(self.wp_lib.page_title_class)
+        page_title = self.driver.find_element(By.CLASS_NAME, self.wp_lib.page_title_class)
         assert page_title is not None
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.search_no_results_message
