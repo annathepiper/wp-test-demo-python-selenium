@@ -123,7 +123,7 @@ class WPTestLib:
     recent_posts_title = "angelahighland.info domain now active"
 
     # Strings pertaining to testing clicking on Recent Comments
-    recent_comments_uri = "/2016/09/12/hello-readers/#comment-3"
+    recent_comments_uri = "/2016/09/12/hello-readers/#comment-"
     recent_comments_title = "Hello, readers!"
 
     # Strings pertaining to testing clicking on Archives

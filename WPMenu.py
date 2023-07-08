@@ -1,6 +1,8 @@
+from selenium.webdriver.common.by import By
+
 # WPMenu
 # Written by Angela Korra'ti
-# Last updated 2/11/2019
+# Last updated 7/7/2023
 #
 # This is a helper class to define the layout of the main menu. Used in turn by page level classes.
 
@@ -23,14 +25,14 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the main menu
         """
-        return self.driver.find_element_by_id(self.wp_lib.menu_id)
+        return self.driver.find_element(By.ID, self.wp_lib.menu_id)
 
     @property
     def home_menu_element(self):
         """
         :return: The Webdriver element pointing at the Home menu item
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.menu_home['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.menu_home['XPath'])
 
     @property
     def home_menu_text(self):
@@ -51,7 +53,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the submenu under Home
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_home['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_home['XPath'])
 
     @property
     def home_submenu_text(self):
@@ -72,7 +74,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the About menu item
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.menu_about['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.menu_about['XPath'])
 
     @property
     def about_menu_text(self):
@@ -93,7 +95,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the Books menu item
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.menu_books['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.menu_books['XPath'])
 
     @property
     def books_menu_text(self):
@@ -114,14 +116,14 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the submenu under Books
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_books_xpath)
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_books_xpath)
 
     @property
     def faerie_submenu_element(self):
         """
         :return: The Webdriver element pointing to the Faerie Blood item under Books
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_faerie['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_faerie['XPath'])
 
     @property
     def faerie_submenu_text(self):
@@ -142,7 +144,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing to the Bone Walker item under Books
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_bone['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_bone['XPath'])
 
     @property
     def bone_submenu_text(self):
@@ -163,7 +165,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing to the Valor of the Healer item under Books
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_valor['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_valor['XPath'])
 
     @property
     def valor_submenu_text(self):
@@ -184,7 +186,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing to the Vengeance of the Hunter item under Books
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_vengeance['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_vengeance['XPath'])
 
     @property
     def vengeance_submenu_text(self):
@@ -205,7 +207,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing to the Victory of the Hawk item under Books
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_victory['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_victory['XPath'])
 
     @property
     def victory_submenu_text(self):
@@ -226,7 +228,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing to the Short Stories item under Books
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_short['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_short['XPath'])
 
     @property
     def short_submenu_text(self):
@@ -247,7 +249,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the Blog menu item
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.menu_blog['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.menu_blog['XPath'])
 
     @property
     def blog_menu_text(self):
@@ -268,7 +270,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the Contact menu item
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.menu_contact['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.menu_contact['XPath'])
 
     @property
     def contact_menu_text(self):
@@ -289,7 +291,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the Store menu item
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.menu_store['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.menu_store['XPath'])
 
     @property
     def store_menu_text(self):
@@ -310,7 +312,7 @@ class WPMenu:
         """
         :return: The Webdriver element pointing at the submenu under Store
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.submenu_store['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.submenu_store['XPath'])
 
     @property
     def store_submenu_text(self):

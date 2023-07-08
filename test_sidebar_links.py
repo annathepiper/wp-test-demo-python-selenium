@@ -1,9 +1,10 @@
 from BaseTest import BaseTest
 import WPPost
+from selenium.webdriver.common.by import By
 
 # TestSidebarLinks
 # Written by Angela Korra'ti
-# Last updated 7/5/2023
+# Last updated 7/7/2023
 #
 # This class conducts tests against the sidebar of my test WordPress site.
 
@@ -35,7 +36,12 @@ class TestSidebarLinks(BaseTest):
         """
         self.ac.move_to_element(self.wp_sidebar.recent_posts_list_elements[4]).perform()
         self.wp_sidebar.recent_comments_list_elements[0].click()
-        assert self.driver.current_url == self.wp_lib.wp_base_uri + self.wp_lib.recent_comments_uri
+
+        # 7/7/2023 Looking for MOST of the URI here because the actual comment number changes
+        # depending on when I last set up the test Wordpress database, or if I had to import
+        # multiple times
+        most_of_uri = self.wp_lib.wp_base_uri + self.wp_lib.recent_comments_uri
+        assert self.driver.current_url.startswith(most_of_uri)
         wp_post = WPPost.WPPost(self.driver, self.wp_lib)
         assert wp_post.post_title_element is not None
         assert wp_post.post_title_element.is_displayed()
@@ -48,7 +54,7 @@ class TestSidebarLinks(BaseTest):
         self.ac.move_to_element(self.wp_sidebar.archives_element).perform()
         self.wp_sidebar.archives_list_elements[0].click()
         assert self.driver.current_url == self.wp_lib.wp_base_uri + self.wp_lib.archives_uri
-        page_title = self.driver.find_element_by_class_name(self.wp_lib.page_title_class)
+        page_title = self.driver.find_element(By.CLASS_NAME, self.wp_lib.page_title_class)
         assert page_title is not None
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.archives_string + self.wp_lib.archives_title
@@ -60,7 +66,7 @@ class TestSidebarLinks(BaseTest):
         self.ac.move_to_element(self.wp_sidebar.categories_element).perform()
         self.wp_sidebar.categories_list_elements[0].click()
         assert self.driver.current_url == self.wp_lib.wp_base_uri + self.wp_lib.categories_uri
-        page_title = self.driver.find_element_by_class_name(self.wp_lib.page_title_class)
+        page_title = self.driver.find_element(By.CLASS_NAME, self.wp_lib.page_title_class)
         assert page_title is not None
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.categories_string + self.wp_lib.categories_title

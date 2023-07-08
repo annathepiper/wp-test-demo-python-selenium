@@ -1,6 +1,8 @@
+from selenium.webdriver.common.by import By
+
 # WPFooter
 # Written by Angela Korra'ti
-# Last updated 7/5/2023
+# Last updated 7/7/2023
 #
 # This is a helper class to define the layout of the footer. Used in turn by page level classes.
 
@@ -23,28 +25,28 @@ class WPFooter:
         """
         :return: The Webdriver element that refers to the footer
         """
-        return self.driver.find_element_by_id(self.wp_lib.footer_id)
+        return self.driver.find_element(By.ID, self.wp_lib.footer_id)
 
     @property
     def social_menu_element(self):
         """
         :return: The Webdriver element that refers to the footer social menu
         """
-        return self.driver.find_element_by_id(self.wp_lib.footer_social_menu_id)
+        return self.driver.find_element(By.ID, self.wp_lib.footer_social_menu_id)
 
     @property
     def site_info_element(self):
         """
         :return: The Webdriver element that refers to the footer site info section
         """
-        return self.driver.find_element_by_class_name(self.wp_lib.footer_site_info_class)
+        return self.driver.find_element(By.CLASS_NAME, self.wp_lib.footer_site_info_class)
 
     @property
     def site_title_element(self):
         """
         :return: The Webdriver element that refers to the footer site title section
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.footer_site_title_xpath)
+        return self.driver.find_element(By.XPATH, self.wp_lib.footer_site_title_xpath)
 
     @property
     def site_title_text(self):
@@ -58,7 +60,7 @@ class WPFooter:
         """
         :return: The Webdriver element that refers to the footer Wordpress link
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.footer_wp_link['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.footer_wp_link['XPath'])
 
     @property
     def wordpress_element_text(self):
@@ -72,7 +74,7 @@ class WPFooter:
         """
         :return: The Webdriver element that refers to the Facebook link in the social section of the footer
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.footer_social_facebook['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.footer_social_facebook['XPath'])
 
     @property
     def social_facebook_text(self):
@@ -86,7 +88,7 @@ class WPFooter:
         """
         :return: The Webdriver element that refers to the Mastodon link in the social section of the footer
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.footer_social_mastodon['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.footer_social_mastodon['XPath'])
 
     @property
     def social_mastodon_text(self):
@@ -100,7 +102,7 @@ class WPFooter:
         """
         :return: The Webdriver element that refers to the Github link in the social section of the footer
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.footer_social_github['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.footer_social_github['XPath'])
 
     @property
     def social_github_text(self):
@@ -114,7 +116,7 @@ class WPFooter:
         """
         :return: The Webdriver element that refers to the LinkedIn link in the social section of the footer
         """
-        return self.driver.find_element_by_xpath(self.wp_lib.footer_social_linkedin['XPath'])
+        return self.driver.find_element(By.XPATH, self.wp_lib.footer_social_linkedin['XPath'])
 
     @property
     def social_linkedin_text(self):
