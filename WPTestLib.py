@@ -18,7 +18,7 @@ class WPTestLib:
     selenium_host = "http://localhost:4444/wd/hub"
     protocol = "http"
     host = "wordpress.local"
-    wp_base_uri = "%s://%s"
+    wp_base_uri = "%s://%s/"
     site_title = {"class": "site-title", "text": "Anna's Dev Wordpress"}
     site_description = {"class": "site-description", "text": "Just another WordPress site"}
     page_title_class = "page-title"
@@ -32,22 +32,6 @@ class WPTestLib:
     content_id = "content"
     primary_content_id = "primary"
     secondary_content_id = "secondary"
-
-    # Strings pertaining to the footer.
-    footer_id = "colophon"
-    footer_social_menu_id = "menu-social-1"
-    footer_site_info_class = "site-info"
-    footer_site_title_xpath = "//span[@class='site-title']/a"
-    footer_wp_link = {"XPath": "//div[@class='site-info']/a", "text": "Proudly powered by WordPress",
-                      "link": "https://wordpress.org/"}
-    footer_social_facebook = {"XPath": "//ul[@id='menu-social-1']/li[1]/a", "text": "Facebook",
-                              "link": "https://www.facebook.com/annathepiper"}
-    footer_social_mastodon = {"XPath": "//ul[@id='menu-social-1']/li[2]/a", "text": "Mastodon",
-                             "link": "https://mastodon.murkworks.net/@annathepiper"}
-    footer_social_github = {"XPath": "//ul[@id='menu-social-1']/li[3]/a", "text": "GitHub",
-                          "link": "https://github.com/annathepiper"}
-    footer_social_linkedin = {"XPath": "//ul[@id='menu-social-1']/li[4]/a", "text": "LinkedIn",
-                            "link": "https://www.linkedin.com/in/angela-korrati"}
 
     # These are all strings pertaining to primary menu items.
     menu_id = "menu-primary"
