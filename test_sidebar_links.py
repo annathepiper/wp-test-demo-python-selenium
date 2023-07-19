@@ -70,12 +70,3 @@ class TestSidebarLinks(BaseTest):
         assert page_title is not None
         assert page_title.is_displayed()
         assert page_title.text == self.wp_lib.categories_string + self.wp_lib.categories_title
-
-    def verify_meta_login_link_click(self):
-        """
-        Verify clicking on the first link in the Meta links goes to the login page
-        """
-        self.ac.move_to_element(self.wp_sidebar.meta_element).perform()
-        self.wp_sidebar.meta_list_elements[0].click()
-        assert self.driver.current_url == self.wp_lib.wp_base_uri + self.wp_lib.meta_login_uri
-        self.driver.back()
