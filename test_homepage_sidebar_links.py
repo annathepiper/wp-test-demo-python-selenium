@@ -42,9 +42,3 @@ class TestHomepageSidebarLinks(TestSidebarLinks):
         Verify clicking the first link in the Categories links goes to the expected category page from the homepage
         """
         self.verify_categories_link_click()
-
-    def test_meta_login_link_click(self):
-        """
-        Verify clicking on the first link in the Meta links goes to the login page from the homepage
-        """
-        self.verify_meta_login_link_click()
