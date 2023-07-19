@@ -1,14 +1,14 @@
 from test_login_logout import TestLoginLogout
-import WPHomepage
+import WPPost
 
-# TestHomepageLoginLogout
+# TestPostLoginLogout
 # Written by Angela Korra'ti
 # Last updated 7/18/2023
 #
-# This class conducts tests against the sidebar of my test WordPress site.
+# This class conducts login and logout testing against a post.
 
 
-class TestHomepageLoginLogout(TestLoginLogout):
+class TestPostLoginLogout(TestLoginLogout):
     wp_sidebar = None
 
     def setup_method(self):
@@ -16,8 +16,8 @@ class TestHomepageLoginLogout(TestLoginLogout):
         Do setup for the test cases.
         """
         super().setup_method()
-        self.driver.get(self.wp_lib.wp_base_uri)
-        super().set_wp_sidebar(WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_sidebar)
+        self.driver.get(self.wp_lib.wp_post_uri)
+        super().set_wp_sidebar(WPPost.WPPost(self.driver, self.wp_lib).wp_sidebar)
 
     def test_meta_login_link_click(self):
         """
