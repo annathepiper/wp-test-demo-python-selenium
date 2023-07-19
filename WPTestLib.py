@@ -18,14 +18,14 @@ class WPTestLib:
     selenium_host = "http://localhost:4444/wd/hub"
     protocol = "http"
     host = "wordpress.local"
-    wp_base_uri = "%s://%s"
+    wp_base_uri = "%s://%s/"
     site_title = {"class": "site-title", "text": "Anna's Dev Wordpress"}
     site_description = {"class": "site-description", "text": "Just another WordPress site"}
     page_title_class = "page-title"
     entry_title_class = "entry-title"
 
     # Strings for test Uris
-    wp_post_uri = "/2016/09/13/testing-testing-testing-is-this-thing-on/"
+    wp_post_uri = "2016/09/13/testing-testing-testing-is-this-thing-on/"
     post_title = "Testing, testing, testing, is this thing on?"
 
     # Strings pertaining to the main content areas.
@@ -112,29 +112,46 @@ class WPTestLib:
 
     # Strings pertaining to search
     search_string = "Faerie Blood"
-    search_uri = "/?s=Faerie+Blood"
+    search_uri = "?s=Faerie+Blood"
     search_results_string = "Search Results for: "
     search_no_results_string = "Walk the Wards"
-    search_no_results_uri = "/?s=Walk+the+Wards"
+    search_no_results_uri = "?s=Walk+the+Wards"
     search_no_results_message = "Nothing Found"
 
     # Strings pertaining to testing clicking on Recent Posts
-    recent_posts_uri = "/2017/04/17/angelahighland-info-domain-now-active/"
+    recent_posts_uri = "2017/04/17/angelahighland-info-domain-now-active/"
     recent_posts_title = "angelahighland.info domain now active"
 
     # Strings pertaining to testing clicking on Recent Comments
-    recent_comments_uri = "/2016/09/12/hello-readers/#comment-"
+    recent_comments_uri = "2016/09/12/hello-readers/#comment-"
     recent_comments_title = "Hello, readers!"
 
     # Strings pertaining to testing clicking on Archives
-    archives_uri = "/2017/04/"
+    archives_uri = "2017/04/"
     archives_string = "Month: "
     archives_title = "April 2017"
 
     # Strings pertaining to testing clicking on Categories
-    categories_uri = "/category/about-me/"
+    categories_uri = "category/about-me/"
     categories_string = "Category: "
     categories_title = "About Me"
 
     # Strings pertaining to testing clicking on Meta links
-    meta_login_uri = "/wp-login.php"
+    meta_login_uri = "wp-login.php"
+    meta_login_text="Log in"
+    meta_logout_text="Log out"
+    meta_site_admin_text="Site Admin"
+
+    # Elements on the login page
+    login_username_xpath="//*[@id='user_login']"
+    login_password_xpath="//*[@id='user_pass']"
+    login_button_xpath="//*[@id='wp-submit']"
+    login_back_to_blog_xpath="//*[@id='backtoblog']/a"
+
+    # Strings pertaining to default test users in the WP database
+    test_user="mytestuser"
+    test_password="HD8We0g8b(#&9d@mB(w)ORs6"
+
+    # Additional items for login/logout testing
+    profile_uri="wp-admin/profile.php"
+    site_name_xpath="//*[@id='wp-admin-bar-site-name']/a"
