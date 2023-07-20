@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 # WPPost
 # Written by Angela Korra'ti
-# Last updated 7/7/2023
+# Last updated 7/20/2023
 #
 # This is a helper class to define the layout of a post on the test site.
 
@@ -27,7 +27,7 @@ class WPPost:
         self.wp_lib = wp_lib
 
         # Initialize the menu object
-        self.wp_menu = WPMenu.WPMenu(self.driver, self.wp_lib)
+        self.wp_menu = WPMenu.WPMenu(self.driver)
 
         # Initialize the sidebar object
         self.wp_sidebar = WPSidebar.WPSidebar(self.driver, self.wp_lib)
