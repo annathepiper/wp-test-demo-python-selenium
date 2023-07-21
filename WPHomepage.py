@@ -2,31 +2,28 @@ import WPMenu
 import WPSidebar
 import WPFooter
 from selenium.webdriver.common.by import By
-import pytest
 
 # WPHomepage
 # Written by Angela Korra'ti
-# Last updated 7/21/2023
+# Last updated 7/20/2023
 #
 # This is a helper class to define the layout of the homepage of the test site.
 
 
-@pytest.mark.usefixtures("setup_webdriver")
 class WPHomepage:
-    # driver = None
+    driver = None
     wp_lib = None
     wp_menu = None
     wp_sidebar = None
     wp_footer = None
 
-    # def __init__(self, driver, wp_lib):
-    def __init__(self, wp_lib):
+    def __init__(self, driver, wp_lib):
         """
         Init method.
         :param driver: Webdriver object
         :param wp_lib: wp_lib object for the helper class to get ids, classes, xpaths
         """
-        # self.driver = driver
+        self.driver = driver
         self.wp_lib = wp_lib
 
         # Initialize the menu object
