@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-
 # WPFooter
 # Written by Angela Korra'ti
 # Last updated 7/19/2023
