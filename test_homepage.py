@@ -1,14 +1,15 @@
-from BaseTest import BaseTest
 import WPHomepage
+import pytest
 
 # TestHomepage
 # Written by Angela Korra'ti
-# Last updated 7/6/2023
+# Last updated 7/21/2023
 #
 # This class conducts tests against the homepage of my test WordPress site.
 
 
-class TestHomepage(BaseTest):
+@pytest.mark.usefixtures("setup_webdriver", "wp_lib")
+class TestHomepage:
     wp_homepage = None
     wp_menu = None
 
@@ -16,7 +17,7 @@ class TestHomepage(BaseTest):
         """
         Do setup for the test cases.
         """
-        super().setup_method()
+        # super().setup_method()
         self.driver.get(self.wp_lib.wp_base_uri)
         self.wp_homepage = WPHomepage.WPHomepage(self.driver, self.wp_lib)
         self.wp_menu = self.wp_homepage.wp_menu

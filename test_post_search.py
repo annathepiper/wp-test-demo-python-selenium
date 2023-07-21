@@ -1,21 +1,21 @@
 import WPPost
-from BaseTest import BaseTest
+import pytest
 
 # TestPostSearch
 # Written by Angela Korra'ti
-# Last updated 7/19/2023
+# Last updated 7/21/2023
 #
 # This class conducts search tests against my test WordPress site.
 
 
-class TestPostSearch(BaseTest):
+@pytest.mark.usefixtures("setup_webdriver", "wp_lib")
+class TestPostSearch:
     wp_sidebar = None
 
     def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setup_method()
         self.driver.get(self.wp_lib.wp_post_uri)
         self.wp_sidebar = WPPost.WPPost(self.driver, self.wp_lib).wp_sidebar
 

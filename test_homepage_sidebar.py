@@ -1,21 +1,21 @@
 import WPHomepage
-from BaseTest import BaseTest
+import pytest
 
 # TestHomepageSidebar
 # Written by Angela Korra'ti
-# Last updated 7/19/2023
+# Last updated 7/21/2023
 #
 # This class conducts tests against the menu on the homepage of my test WordPress site.
 
 
-class TestHomepageSidebar(BaseTest):
+@pytest.mark.usefixtures("setup_webdriver", "wp_lib")
+class TestHomepageSidebar:
     wp_sidebar = None
 
     def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setup_method()
         self.driver.get(self.wp_lib.wp_base_uri)
         self.wp_sidebar = WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_sidebar
 

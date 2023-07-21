@@ -1,5 +1,5 @@
-from BaseTest import BaseTest
 import WPPost
+import pytest
 
 # TestPost
 # Written by Angela Korra'ti
@@ -8,7 +8,8 @@ import WPPost
 # This class conducts tests against a post on my test WordPress site.
 
 
-class TestPost(BaseTest):
+@pytest.mark.usefixtures("setup_webdriver", "wp_lib")
+class TestPost:
     wp_post = None
     wp_menu = None
 
@@ -16,7 +17,6 @@ class TestPost(BaseTest):
         """
         Do setup for the test cases.
         """
-        super().setup_method()
         self.driver.get(self.wp_lib.wp_post_uri)
         self.wp_post = WPPost.WPPost(self.driver, self.wp_lib)
         self.wp_menu = self.wp_post.wp_menu

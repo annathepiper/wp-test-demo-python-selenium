@@ -1,22 +1,21 @@
 import WPPost
-from BaseTest import BaseTest
-
+import pytest
 
 # TestFooter
 # Written by Angela Korra'ti
-# Last updated 7/19/2023
+# Last updated 7/21/2023
 #
 # This class conducts tests against the footer on a post of my test WordPress site.
 
 
-class TestPostFooter(BaseTest):
+@pytest.mark.usefixtures("setup_webdriver", "wp_lib")
+class TestPostFooter:
     wp_footer = None
 
     def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setup_method()
         self.driver.get(self.wp_lib.wp_post_uri)
         self.wp_footer = WPPost.WPPost(self.driver, self.wp_lib).wp_footer
 

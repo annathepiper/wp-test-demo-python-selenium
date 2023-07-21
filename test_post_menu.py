@@ -1,21 +1,21 @@
 import WPPost
-from BaseTest import BaseTest
+import pytest
 
 # TestPostMenu
 # Written by Angela Korra'ti
-# Last updated 7/20/2023
+# Last updated 7/21/2023
 #
 # This class conducts tests against the menu on a post of my test WordPress site.
 
 
-class TestPostMenu(BaseTest):
+@pytest.mark.usefixtures("setup_webdriver", "wp_lib")
+class TestPostMenu:
     wp_menu = None
 
     def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setup_method()
         self.driver.get(self.wp_lib.wp_post_uri)
         self.wp_menu = WPPost.WPPost(self.driver, self.wp_lib).wp_menu
 

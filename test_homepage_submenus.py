@@ -1,21 +1,21 @@
 import WPHomepage
-from BaseTest import BaseTest
+import pytest
 
 # TestHomepageMenu
 # Written by Angela Korra'ti
-# Last updated 7/20/2023
+# Last updated 7/21/2023
 #
 # This class conducts tests against the submenus on the homepage of my test WordPress site.
 
 
-class TestHomepageSubmenus(BaseTest):
+@pytest.mark.usefixtures("setup_webdriver", "wp_lib")
+class TestHomepageSubmenus:
     wp_menu = None
 
     def setup_method(self):
         """
         Do setup for the test cases.
         """
-        super().setup_method()
         self.driver.get(self.wp_lib.wp_base_uri)
         self.wp_menu = WPHomepage.WPHomepage(self.driver, self.wp_lib).wp_menu
 
