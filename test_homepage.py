@@ -19,7 +19,8 @@ class TestHomepage:
         """
         # super().setup_method()
         self.driver.get(self.wp_lib.wp_base_uri)
-        self.wp_homepage = WPHomepage.WPHomepage(self.driver, self.wp_lib)
+        # self.wp_homepage = WPHomepage.WPHomepage(self.driver, self.wp_lib)
+        self.wp_homepage = WPHomepage.WPHomepage(self.wp_lib)
         self.wp_menu = self.wp_homepage.wp_menu
 
     def test_homepage_title(self):

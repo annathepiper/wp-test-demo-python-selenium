@@ -17,10 +17,10 @@ def setup_webdriver(request):
     driver.close()
     driver.quit()
 
-@pytest.fixture(scope="class", autouse=True)
+@pytest.fixture(scope="class")
 def action_chains(request, setup_webdriver):
     request.cls.ac = ActionChains(setup_webdriver)
 
-@pytest.fixture(scope="class", autouse=True)
+@pytest.fixture(scope="class")
 def wp_lib(request):
     request.cls.wp_lib = WPTestLib.WPTestLib()
